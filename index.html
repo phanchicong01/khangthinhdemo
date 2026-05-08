@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khang Thịnh Investment — 3 mẫu thiết kế website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: #FAFAF8;
+    color: #0F0F10;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+  .serif { font-family: 'DM Serif Display', serif; }
+
+  .wrap {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 32px;
+  }
+
+  /* Header */
+  header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .logo-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  .logo-mark {
+    width: 44px; height: 44px;
+    background: #C8102E;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 18px;
+    border-radius: 8px;
+  }
+  .logo-text {
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px;
+  }
+  .logo-text small {
+    display: block;
+    font-size: 10px;
+    color: #6B7280;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-top: 2px;
+  }
+
+  .pill {
+    display: inline-block;
+    background: #FEE2E2;
+    color: #991B1B;
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  h1 .red { color: #C8102E; font-style: italic; }
+  .subtitle {
+    color: #6B7280;
+    font-size: 17px;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Cards */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+  @media (max-width: 1024px) { .grid { grid-template-columns: 1fr; max-width: 540px; margin-left: auto; margin-right: auto; } }
+
+  .card {
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid #E5E7EB;
+    transition: all 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.08);
+    border-color: #0F0F10;
+  }
+
+  .card-preview {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 1px solid #E5E7EB;
+  }
+  .card-preview iframe {
+    width: 200%;
+    height: 200%;
+    border: 0;
+    transform: scale(0.5);
+    transform-origin: top left;
+    pointer-events: none;
+  }
+  .card-preview-fallback {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 80px;
+    line-height: 1;
+  }
+
+  /* Mau A preview - dark industrial */
+  .preview-A {
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: #f5f1ea;
+    position: relative;
+    overflow: hidden;
+  }
+  .preview-A::before {
+    content: "";
+    position: absolute;
+    top: -50px; right: -50px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(200,16,46,0.3) 0%, transparent 70%);
+  }
+  .preview-A-content {
+    position: relative;
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .preview-A .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid #C8102E;
+    color: #FF1F3D;
+    padding: 4px 12px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    align-self: flex-start;
+  }
+  .preview-A h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    line-height: 0.95;
+    margin: 16px 0;
+    letter-spacing: -0.01em;
+  }
+  .preview-A h2 .accent { color: #C8102E; }
+  .preview-A h2 .strike {
+    -webkit-text-stroke: 1px #f5f1ea;
+    color: transparent;
+    display: block;
+  }
+  .preview-A-stats {
+    display: flex;
+    gap: 24px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 16px;
+    font-size: 11px;
+    color: #8a8a8a;
+    letter-spacing: 1px;
+  }
+
+  /* Mau B preview - corporate navy */
+  .preview-B {
+    background: linear-gradient(135deg, #F5F2EC 0%, #FAFAF8 100%);
+    color: #0A2342;
+    position: relative;
+  }
+  .preview-B-content {
+    padding: 40px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .preview-B .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #0A2342;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .preview-B .eyebrow::before {
+    content: "";
+    width: 24px; height: 1px;
+    background: #C9A961;
+  }
+  .preview-B h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+  .preview-B h2 .gold { color: #C9A961; font-style: italic; }
+  .preview-B-card {
+    margin-top: 16px;
+    background: white;
+    padding: 16px;
+    border: 1px solid #E5E7EB;
+    box-shadow: 0 4px 16px rgba(10,35,66,0.05);
+    position: relative;
+  }
+  .preview-B-card::before {
+    content: "";
+    position: absolute;
+    top: -1px; left: -1px;
+    width: 24px; height: 24px;
+    border-top: 2px solid #C9A961;
+    border-left: 2px solid #C9A961;
+  }
+  .preview-B-card-stat {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px solid #E5E7EB;
+    font-size: 11px;
+  }
+  .preview-B-card-stat:last-child { border-bottom: none; }
+  .preview-B-card-stat span:last-child {
+    font-family: 'DM Serif Display', serif;
+    font-size: 16px;
+    color: #0A2342;
+  }
+
+  /* Mau C preview - modern white */
+  .preview-C {
+    background: white;
+    color: #0F0F10;
+    position: relative;
+    overflow: hidden;
+  }
+  .preview-C::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, #FEE2E2 0%, transparent 60%);
+    opacity: 0.6;
+  }
+  .preview-C-content {
+    position: relative;
+    padding: 40px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .preview-C .pill-mini {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #F4F4F5;
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 10px;
+    font-weight: 500;
+    color: #3F3F46;
+    margin-bottom: 16px;
+    align-self: center;
+  }
+  .preview-C .pill-mini .dot {
+    width: 6px; height: 6px;
+    background: #DC2626;
+    border-radius: 50%;
+  }
+  .preview-C h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 32px;
+    line-height: 1.05;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .preview-C h2 .red { color: #DC2626; font-style: italic; }
+  .preview-C-cta {
+    margin-top: 16px;
+    display: inline-flex;
+    background: #0F0F10;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    align-self: center;
+  }
+
+  /* Card body */
+  .card-body {
+    padding: 28px 28px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-tag {
+    display: inline-block;
+    font-size: 11px;
+    color: #6B7280;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .card-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .card-desc {
+    color: #6B7280;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+    flex: 1;
+  }
+  .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 18px;
+  }
+  .meta-tag {
+    background: #F4F4F5;
+    color: #3F3F46;
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 100px;
+    font-weight: 500;
+  }
+  .card-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #0F0F10;
+    font-size: 14px;
+    font-weight: 600;
+    padding-top: 16px;
+    border-top: 1px solid #F4F4F5;
+    transition: gap 0.2s;
+  }
+  .card:hover .card-cta { gap: 12px; color: #C8102E; }
+
+  /* Footer note */
+  .footer-note {
+    text-align: center;
+    padding: 40px 32px;
+    background: white;
+    border-radius: 20px;
+    border: 1px solid #E5E7EB;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .footer-note h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    margin-bottom: 12px;
+  }
+  .footer-note p {
+    color: #6B7280;
+    font-size: 14.5px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .footer-note p:last-child { margin-bottom: 0; }
+  .footer-note strong { color: #0F0F10; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="logo-row">
+      <div class="logo-mark">KT</div>
+      <div class="logo-text">
+        Khang Thịnh Investment
+        <small>WEBSITE PROPOSAL · 2026</small>
+      </div>
+    </div>
+
+    <div class="pill">3 phong cách thiết kế</div>
+    <h1>Mời chị Ngọc <span class="red">chọn phong cách</span></h1>
+    <p class="subtitle">
+      Em đã làm sẵn 3 mẫu thiết kế khác nhau cho Khang Thịnh Investment, dựa trên hồ sơ năng lực
+      mà công ty đã gửi. Chị xem và chọn phong cách phù hợp nhất với hình ảnh thương hiệu mong muốn.
+    </p>
+  </header>
+
+  <div class="grid">
+    <!-- MAU A -->
+    <a href="khangthinh-mau-A-industrial.html" class="card">
+      <div class="card-preview preview-A">
+        <div class="preview-A-content">
+          <div class="badge-pill">● Bộ Quốc phòng</div>
+          <h2>
+            CUNG ỨNG VLXD<br>
+            <span class="strike">VẬN CHUYỂN</span>
+            <span class="accent">ĐƯỜNG THỦY</span>
+          </h2>
+          <div class="preview-A-stats">
+            <span>700-3,900T</span>
+            <span>24/7</span>
+            <span>QCVN</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Mẫu A · Industrial</span>
+        <h3 class="card-name">Đậm chất công trường</h3>
+        <p class="card-desc">
+          Phong cách industrial mạnh mẽ — đen, đỏ, typography stencil. Phù hợp khi muốn thể hiện sự
+          vững chắc, thực chiến, đặc trưng ngành xây dựng quốc phòng.
+        </p>
+        <div class="card-meta">
+          <span class="meta-tag">Đen + Đỏ</span>
+          <span class="meta-tag">Bebas Neue</span>
+          <span class="meta-tag">Editorial</span>
+        </div>
+        <span class="card-cta">Xem mẫu đầy đủ →</span>
+      </div>
+    </a>
+
+    <!-- MAU B -->
+    <a href="khangthinh-mau-B-corporate.html" class="card">
+      <div class="card-preview preview-B">
+        <div class="preview-B-content">
+          <div class="eyebrow">Đối tác Bộ Quốc phòng</div>
+          <h2>Cung ứng vật liệu<br>xây dựng <span class="gold">chuyên nghiệp</span></h2>
+          <div class="preview-B-card">
+            <div class="preview-B-card-stat">
+              <span>Sức chở</span>
+              <span>3,900T</span>
+            </div>
+            <div class="preview-B-card-stat">
+              <span>Điều phối</span>
+              <span>24/7</span>
+            </div>
+            <div class="preview-B-card-stat">
+              <span>Hợp quy</span>
+              <span>QCVN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Mẫu B · Corporate</span>
+        <h3 class="card-name">Sang trọng, tin cậy</h3>
+        <p class="card-desc">
+          Phong cách doanh nghiệp truyền thống — navy, vàng đồng, font serif Playfair. Phù hợp khi
+          muốn tạo cảm giác bề thế, chuyên nghiệp, kiểu công ty tài chính ngân hàng.
+        </p>
+        <div class="card-meta">
+          <span class="meta-tag">Navy + Vàng</span>
+          <span class="meta-tag">Playfair Display</span>
+          <span class="meta-tag">Trang trọng</span>
+        </div>
+        <span class="card-cta">Xem mẫu đầy đủ →</span>
+      </div>
+    </a>
+
+    <!-- MAU C -->
+    <a href="khangthinh-mau-C-modern.html" class="card">
+      <div class="card-preview preview-C">
+        <div class="preview-C-content">
+          <div class="pill-mini">
+            <span class="dot"></span>
+            Đối tác <strong>Bộ Quốc phòng</strong>
+          </div>
+          <h2>Cung ứng VLXD &<br>vận chuyển <span class="red">đường thủy</span></h2>
+          <div class="preview-C-cta">Nhận báo giá ngay</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Mẫu C · Modern</span>
+        <h3 class="card-name">Hiện đại, sạch sẽ</h3>
+        <p class="card-desc">
+          Phong cách tối giản kiểu Apple/startup — trắng, đỏ accent, nhiều khoảng trắng, font DM Serif.
+          Phù hợp khi muốn khác biệt với đối thủ cùng ngành (đa số dùng template cũ).
+        </p>
+        <div class="card-meta">
+          <span class="meta-tag">Trắng + Đỏ</span>
+          <span class="meta-tag">DM Serif</span>
+          <span class="meta-tag">Tối giản</span>
+        </div>
+        <span class="card-cta">Xem mẫu đầy đủ →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer-note">
+    <h3>Cách xem mẫu</h3>
+    <p>Click vào mỗi mẫu để xem website đầy đủ. Mỗi mẫu hiển thị tốt trên cả máy tính và điện thoại — chị có thể thử trên cả 2 thiết bị.</p>
+    <p style="margin-top:12px"><strong>Lưu ý:</strong> Đây là bản demo dùng dữ liệu giả — khi triển khai chính thức, em sẽ thay bằng hình ảnh thật của Khang Thịnh và kết nối form gửi email/Zalo.</p>
+  </div>
+</div>
+
+</body>
+</html>

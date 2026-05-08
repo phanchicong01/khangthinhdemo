@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khang Thịnh — VLXD &amp; Vận chuyển đường thủy</title>
+<meta name="description" content="Đối tác tin cậy của Bộ Quốc phòng - Binh đoàn 12 - Tổng Công ty Trường Sơn. Cung ứng cát, đá, vận chuyển đường thủy, sức chở 700-3,900 tấn.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --red: #DC2626;
+    --red-dark: #991B1B;
+    --red-soft: #FEE2E2;
+    --black: #0F0F10;
+    --gray-900: #18181B;
+    --gray-700: #3F3F46;
+    --gray-500: #71717A;
+    --gray-300: #D4D4D8;
+    --gray-100: #F4F4F5;
+    --gray-50: #FAFAFA;
+    --white: #FFFFFF;
+    --green: #10B981;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--red); color: white; }
+  .display { font-family: 'DM Serif Display', serif; }
+
+  /* === NAV === */
+  nav {
+    position: fixed;
+    top: 16px; left: 16px; right: 16px;
+    z-index: 100;
+    padding: 14px 24px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid var(--gray-100);
+    border-radius: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  }
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit; }
+  .logo-mark {
+    width: 34px; height: 34px;
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 8px;
+  }
+  .logo-text { font-weight: 700; font-size: 14px; line-height: 1; }
+  .logo-text small {
+    display: block;
+    font-size: 9px;
+    color: var(--gray-500);
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+  }
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+  .nav-links a {
+    color: var(--gray-700);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--black); }
+  .nav-cta {
+    background: var(--black);
+    color: var(--white);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { background: var(--red); }
+  @media (max-width: 768px) {
+    nav { padding: 10px 16px; }
+    .nav-links { display: none; }
+  }
+
+  /* === HERO === */
+  .hero {
+    padding: 140px 32px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: var(--white);
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 80px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, var(--red-soft) 0%, transparent 60%);
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .hero-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gray-100);
+    padding: 8px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-bottom: 32px;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-pill .dot {
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  .hero-pill strong { color: var(--black); font-weight: 700; }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
+  }
+  .hero h1 .red { color: var(--red); font-style: italic; }
+
+  .hero-sub {
+    font-size: clamp(16px, 1.5vw, 20px);
+    color: var(--gray-700);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-sub strong { color: var(--black); font-weight: 600; }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 2;
+  }
+  .btn {
+    padding: 16px 32px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 100px;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .btn-primary {
+    background: var(--black);
+    color: var(--white);
+  }
+  .btn-primary:hover {
+    background: var(--red);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(220,38,38,0.25);
+  }
+  .btn-ghost {
+    background: var(--white);
+    color: var(--black);
+    border: 1px solid var(--gray-300);
+  }
+  .btn-ghost:hover { border-color: var(--black); }
+
+  /* Hero stat strip */
+  .hero-strip {
+    max-width: 1080px;
+    margin: 0 auto;
+    background: var(--gray-50);
+    border-radius: 24px;
+    padding: 32px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    position: relative;
+    z-index: 2;
+    border: 1px solid var(--gray-100);
+  }
+  @media (max-width: 768px) { .hero-strip { grid-template-columns: 1fr 1fr; gap: 24px; padding: 24px; } }
+  .hero-strip-item { text-align: center; }
+  .hero-strip-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .hero-strip-num small { font-size: 0.5em; color: var(--gray-500); }
+  .hero-strip-label {
+    font-size: 12px;
+    color: var(--gray-500);
+    font-weight: 500;
+  }
+
+  /* === SECTION === */
+  section.content {
+    padding: 100px 32px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .section-header {
+    text-align: center;
+    margin-bottom: 64px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section-pill {
+    display: inline-block;
+    background: var(--red-soft);
+    color: var(--red-dark);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 18px;
+  }
+  .section-title .red { color: var(--red); font-style: italic; }
+  .section-desc {
+    color: var(--gray-700);
+    font-size: 17px;
+    line-height: 1.65;
+  }
+
+  /* === PARTNERS LOGO STRIP === */
+  .partners {
+    padding: 50px 32px;
+    border-top: 1px solid var(--gray-100);
+    border-bottom: 1px solid var(--gray-100);
+    text-align: center;
+  }
+  .partners-label {
+    font-size: 12px;
+    color: var(--gray-500);
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  .partners-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .partner-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--gray-700);
+    transition: color 0.2s;
+  }
+  .partner-name:hover { color: var(--black); }
+
+  /* === SERVICES === */
+  .services { background: var(--gray-50); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 768px) { .services-grid { grid-template-columns: 1fr; } }
+
+  .service-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 24px;
+    transition: all 0.3s;
+    border: 1px solid var(--gray-100);
+    cursor: pointer;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+    border-color: var(--gray-300);
+  }
+  .service-icon-wrap {
+    width: 56px; height: 56px;
+    background: var(--red-soft);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    color: var(--red);
+  }
+  .service-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    line-height: 1.2;
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+  .service-desc {
+    color: var(--gray-700);
+    font-size: 15px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+  .service-link {
+    color: var(--black);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .service-card:hover .service-link { gap: 10px; color: var(--red); }
+
+  /* === PROJECTS === */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 768px) { .projects-grid { grid-template-columns: 1fr; } }
+
+  .project-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--gray-100);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 48px rgba(0,0,0,0.06);
+  }
+  .project-card.feature { grid-column: span 2; }
+  @media (max-width: 768px) { .project-card.feature { grid-column: span 1; } }
+
+  .project-image {
+    aspect-ratio: 16/9;
+    background: linear-gradient(135deg, var(--gray-900), var(--black));
+    position: relative;
+    overflow: hidden;
+  }
+  .project-card.feature .project-image { aspect-ratio: 21/9; }
+  .project-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 30% 50%, rgba(220,38,38,0.2) 0%, transparent 50%),
+      repeating-linear-gradient(90deg, transparent, transparent 30px, rgba(255,255,255,0.03) 30px, rgba(255,255,255,0.03) 31px);
+  }
+  .project-image-content {
+    position: absolute;
+    inset: 0;
+    padding: 32px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+  .project-image-tag {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    color: var(--white);
+    padding: 6px 14px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 500;
+    align-self: flex-start;
+    border: 1px solid rgba(255,255,255,0.2);
+    position: absolute;
+    top: 32px; left: 32px;
+  }
+  .project-image-year {
+    font-family: 'DM Serif Display', serif;
+    color: var(--white);
+    font-size: 64px;
+    line-height: 1;
+    opacity: 0.9;
+  }
+  .project-card.feature .project-image-year { font-size: 96px; }
+  .project-image-arrow {
+    width: 56px; height: 56px;
+    background: var(--white);
+    color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    transition: transform 0.3s;
+  }
+  .project-card:hover .project-image-arrow { transform: translateX(8px); background: var(--red); color: white; }
+
+  .project-info { padding: 28px 32px 32px; }
+  .project-info h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+  }
+  .project-card.feature .project-info h3 { font-size: 32px; }
+  .project-info .client {
+    color: var(--red);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .project-info p {
+    color: var(--gray-700);
+    font-size: 14.5px;
+    line-height: 1.6;
+  }
+
+  /* === STATS === */
+  .stats {
+    background: var(--black);
+    color: var(--white);
+    padding: 100px 32px;
+    border-radius: 32px;
+    margin: 0 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(circle at 20% 30%, rgba(220,38,38,0.15) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(220,38,38,0.1) 0%, transparent 50%);
+  }
+  .stats-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+  }
+  .stats-content > .section-pill {
+    background: rgba(255,255,255,0.1);
+    color: var(--white);
+  }
+  .stats-content h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.1;
+    margin-bottom: 60px;
+    color: white;
+  }
+  .stats-content h2 .red { color: var(--red); font-style: italic; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+  @media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px; } }
+  .stat-item {
+    padding: 32px 24px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    margin-bottom: 12px;
+    color: var(--white);
+  }
+  .stat-num small { font-size: 0.5em; color: var(--red); }
+  .stat-label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.4;
+  }
+
+  /* === CAPABILITIES === */
+  .capabilities { background: var(--gray-50); }
+  .cap-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 768px) { .cap-grid { grid-template-columns: 1fr; } }
+  .cap-card {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid var(--gray-100);
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  .cap-icon {
+    width: 48px; height: 48px;
+    background: var(--red-soft);
+    color: var(--red);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .cap-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .cap-desc { color: var(--gray-700); font-size: 14.5px; line-height: 1.6; }
+  .cap-tag {
+    display: inline-block;
+    margin-top: 12px;
+    background: var(--gray-100);
+    color: var(--gray-700);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+
+  /* Certs */
+  .certs {
+    margin-top: 32px;
+    background: var(--white);
+    padding: 32px;
+    border-radius: 20px;
+    border: 1px solid var(--gray-100);
+  }
+  .certs-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+  .certs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .cert-pill {
+    background: var(--gray-50);
+    color: var(--black);
+    padding: 10px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid var(--gray-100);
+  }
+  .cert-check {
+    width: 18px; height: 18px;
+    background: var(--green);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+  }
+
+  /* === PRICING === */
+  .price-table-wrap {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    border: 1px solid var(--gray-100);
+  }
+  .price-table { width: 100%; border-collapse: collapse; }
+  .price-table th {
+    background: var(--gray-50);
+    padding: 20px 28px;
+    text-align: left;
+    font-size: 12px;
+    color: var(--gray-500);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--gray-100);
+  }
+  .price-table td {
+    padding: 20px 28px;
+    border-bottom: 1px solid var(--gray-100);
+    font-size: 14.5px;
+    vertical-align: middle;
+  }
+  .price-table tr:last-child td { border-bottom: none; }
+  .price-table .product-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+  .price-table .product-desc { font-size: 13px; color: var(--gray-500); }
+  .price-value {
+    font-family: 'DM Serif Display', serif;
+    color: var(--red);
+    font-size: 18px;
+  }
+  .price-unit { font-size: 13px; color: var(--gray-500); }
+  .quote-btn {
+    background: var(--black);
+    color: var(--white);
+    padding: 9px 18px;
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .quote-btn:hover { background: var(--red); }
+
+  .price-note {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: var(--red-soft);
+    border-radius: 16px;
+    font-size: 14px;
+    color: var(--gray-900);
+    line-height: 1.6;
+  }
+  .price-note strong { color: var(--red-dark); }
+
+  /* === CONTACT === */
+  .contact-card {
+    background: var(--gray-50);
+    padding: 60px;
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 60px;
+  }
+  @media (max-width: 1024px) { .contact-card { grid-template-columns: 1fr; padding: 40px; gap: 40px; } }
+
+  .contact-info h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+  .contact-info h2 .red { color: var(--red); font-style: italic; }
+  .contact-info > p {
+    color: var(--gray-700);
+    margin-bottom: 36px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+  .contact-channels { display: flex; flex-direction: column; gap: 12px; }
+  .contact-channel {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    padding: 18px 24px;
+    background: var(--white);
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--black);
+    transition: all 0.2s;
+    border: 1px solid var(--gray-100);
+  }
+  .contact-channel:hover {
+    border-color: var(--black);
+    transform: translateX(4px);
+  }
+  .channel-icon {
+    width: 44px; height: 44px;
+    background: var(--red-soft);
+    color: var(--red);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .channel-label {
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  .channel-value {
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .quote-form {
+    background: var(--white);
+    padding: 36px;
+    border-radius: 24px;
+    border: 1px solid var(--gray-100);
+  }
+  .form-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+  .form-sub {
+    color: var(--gray-500);
+    font-size: 14px;
+    margin-bottom: 28px;
+  }
+  .form-row { margin-bottom: 18px; }
+  .form-row.split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  @media (max-width: 600px) { .form-row.split { grid-template-columns: 1fr; } }
+  .form-row label {
+    display: block;
+    font-size: 13px;
+    color: var(--gray-700);
+    margin-bottom: 6px;
+    font-weight: 500;
+  }
+  .form-row label .req { color: var(--red); }
+  .form-row input,
+  .form-row select,
+  .form-row textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--gray-50);
+    border: 1px solid var(--gray-100);
+    color: var(--black);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+    border-radius: 12px;
+    transition: all 0.2s;
+  }
+  .form-row input:focus,
+  .form-row select:focus,
+  .form-row textarea:focus {
+    outline: none;
+    border-color: var(--black);
+    background: var(--white);
+  }
+  .form-row textarea { resize: vertical; min-height: 80px; }
+  .form-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--black);
+    color: var(--white);
+    border: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .form-submit:hover { background: var(--red); }
+  .form-success {
+    display: none;
+    padding: 14px;
+    background: rgba(16,185,129,0.1);
+    border: 1px solid var(--green);
+    color: var(--gray-900);
+    font-size: 13.5px;
+    margin-top: 14px;
+    border-radius: 12px;
+  }
+  .form-success.show { display: block; }
+
+  /* === FOOTER === */
+  footer {
+    background: var(--black);
+    color: rgba(255,255,255,0.6);
+    padding: 70px 32px 30px;
+    border-radius: 32px 32px 0 0;
+    margin-top: 40px;
+  }
+  .footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 50px;
+  }
+  @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  .footer-brand .logo { margin-bottom: 18px; color: white; }
+  .footer-brand .logo-text { color: white; }
+  .footer-brand .logo-mark { background: var(--red); }
+  .footer-brand p { font-size: 14px; line-height: 1.7; max-width: 320px; }
+  .footer-col h4 {
+    font-size: 13px;
+    color: var(--white);
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-col a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+  }
+  .footer-col a:hover { color: var(--red); }
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Float */
+  .float-actions {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 90;
+  }
+  .float-btn {
+    width: 56px; height: 56px;
+    border-radius: 50%;
+    background: var(--black);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .float-btn:hover { transform: scale(1.1); background: var(--red); }
+  .float-btn.zalo { background: #0068FF; }
+  .float-btn.zalo:hover { background: #0050CC; }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark">KT</div>
+    <div class="logo-text">
+      Khang Thịnh
+      <small>INVESTMENT</small>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Dịch vụ</a></li>
+    <li><a href="#projects">Dự án</a></li>
+    <li><a href="#capabilities">Năng lực</a></li>
+    <li><a href="#pricing">Bảng giá</a></li>
+    <li><a href="#contact">Liên hệ</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Báo giá</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pill">
+    <span class="dot"></span>
+    Đối tác <strong>Bộ Quốc phòng</strong> · Binh đoàn 12
+  </div>
+  <h1>
+    Cung ứng VLXD &<br>
+    vận chuyển <span class="red">đường thủy</span>
+  </h1>
+  <p class="hero-sub">
+    Hệ sinh thái cung ứng <strong>cát, đá, vận chuyển đường thủy</strong> phủ sóng toàn miền Nam.
+    Sức chở đội tàu 700 — 3,900 tấn, điều phối linh hoạt 24/7.
+  </p>
+  <div class="hero-actions">
+    <a href="#contact" class="btn btn-primary">Nhận báo giá ngay</a>
+    <a href="#projects" class="btn btn-ghost">Xem dự án →</a>
+  </div>
+
+  <div class="hero-strip">
+    <div class="hero-strip-item">
+      <div class="hero-strip-num">3,900<small>T</small></div>
+      <div class="hero-strip-label">Sức chở tối đa</div>
+    </div>
+    <div class="hero-strip-item">
+      <div class="hero-strip-num">24/7</div>
+      <div class="hero-strip-label">Điều phối</div>
+    </div>
+    <div class="hero-strip-item">
+      <div class="hero-strip-num">5<small>+</small></div>
+      <div class="hero-strip-label">Dự án Bộ QP</div>
+    </div>
+    <div class="hero-strip-item">
+      <div class="hero-strip-num">100<small>%</small></div>
+      <div class="hero-strip-label">Hợp quy</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="partners-label">Đối tác chiến lược</div>
+  <div class="partners-row">
+    <div class="partner-name">Bộ Quốc phòng</div>
+    <div class="partner-name">Binh đoàn 12</div>
+    <div class="partner-name">TCT Trường Sơn</div>
+    <div class="partner-name">TS 12 / 98</div>
+    <div class="partner-name">TS 99 / 185</div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="content services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-pill">Dịch vụ</div>
+      <h2 class="section-title">Cung ứng <span class="red">trọn gói</span><br>cho mọi dự án</h2>
+      <p class="section-desc">Từ khâu khai thác, vận chuyển đường thủy đến giao tận chân công trình. Đội điều phối giàu kinh nghiệm, hệ thống cơ giới đồng bộ.</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 20l4-12 5 8 4-6 5 10H3z"/>
+            <circle cx="6" cy="6" r="2"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Cát san lấp &amp; xây dựng</h3>
+        <p class="service-desc">Cát tự nhiên đạt chuẩn QCVN 16:2023/BXD. Cung ứng số lượng lớn cho dự án hạ tầng, công trình dân dụng, nhà phố.</p>
+        <a href="#contact" class="service-link">Tìm hiểu thêm →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <polygon points="12,3 22,21 2,21"/>
+            <path d="M12 8v8M8 16h8"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Đá xây dựng các loại</h3>
+        <p class="service-desc">Đá 1×2, đá 4×6, đá mi, đá hộc — đa dạng kích thước cho mọi nhu cầu. Chất lượng đồng đều, kiểm định chặt chẽ.</p>
+        <a href="#contact" class="service-link">Tìm hiểu thêm →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M2 18l3-7h14l3 7"/>
+            <path d="M5 18v3M19 18v3"/>
+            <path d="M12 11V4M8 4h8"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Vận chuyển đường thủy</h3>
+        <p class="service-desc">Đội tàu sức chở 700-3,900 tấn, điều phối 24/7. Giao hàng đến mọi tỉnh miền Nam qua hệ thống sông Mekong.</p>
+        <a href="#contact" class="service-link">Tìm hiểu thêm →</a>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon-wrap">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M3 21V11l9-7 9 7v10"/>
+            <path d="M9 21v-7h6v7"/>
+          </svg>
+        </div>
+        <h3 class="service-name">Thi công xây dựng</h3>
+        <p class="service-desc">Đội xây lắp + cơ giới đầy đủ — thi công nhà phố, biệt thự, công trình dân dụng. Đảm bảo tiến độ và chất lượng.</p>
+        <a href="#contact" class="service-link">Tìm hiểu thêm →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="content" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-pill">Dự án tiêu biểu</div>
+      <h2 class="section-title">Công trình đã <span class="red">đồng hành</span></h2>
+      <p class="section-desc">Tham gia các dự án trọng điểm quốc gia cùng Bộ Quốc phòng và Tổng Công ty Trường Sơn.</p>
+    </div>
+
+    <div class="projects-grid">
+      <div class="project-card feature">
+        <div class="project-image">
+          <div class="project-image-tag">Hạ tầng giao thông</div>
+          <div class="project-image-content">
+            <div class="project-image-year">2025</div>
+            <div class="project-image-arrow">→</div>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Cao tốc Cái Nước — Đất Mũi</h3>
+          <div class="client">Tổng Công ty Trường Sơn 12 · Cà Mau</div>
+          <p>Cung ứng cát, đá xây dựng và vận chuyển đường thủy cho dự án cao tốc trọng điểm khu vực Đồng bằng sông Cửu Long. Hợp tác cùng Binh đoàn 12 - Tổng Cty Trường Sơn từ giai đoạn khởi công.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <div class="project-image-tag">Hạ tầng đảo</div>
+          <div class="project-image-content">
+            <div class="project-image-year">2025</div>
+            <div class="project-image-arrow">→</div>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Đường ra đảo Hòn Khoai</h3>
+          <div class="client">Lữ đoàn 99 — Công ty TS 99</div>
+          <p>Cung ứng VLXD và vận chuyển bằng đường thủy cho dự án hạ tầng kết nối đảo, có ý nghĩa chiến lược.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-image">
+          <div class="project-image-tag">Cầu đường</div>
+          <div class="project-image-content">
+            <div class="project-image-year">2026</div>
+            <div class="project-image-arrow">→</div>
+          </div>
+        </div>
+        <div class="project-info">
+          <h3>Cầu Cửa Lớn — Đất Mũi</h3>
+          <div class="client">Tổng Công ty Trường Sơn 99</div>
+          <p>Cung ứng vật liệu cho công trình cầu trọng điểm tại khu vực cực Nam Tổ quốc.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-content">
+    <div class="section-pill">Bằng số liệu</div>
+    <h2>Năng lực được<br>chứng minh qua <span class="red">con số</span></h2>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">3,900<small>T</small></div>
+        <div class="stat-label">Sức chở tải trọng tối đa</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">24/7</div>
+        <div class="stat-label">Điều phối linh hoạt</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">05<small>+</small></div>
+        <div class="stat-label">Dự án Bộ Quốc phòng</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">100<small>%</small></div>
+        <div class="stat-label">Hợp quy QCVN 16:2023</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="content capabilities" id="capabilities">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-pill">Năng lực</div>
+      <h2 class="section-title">Đội ngũ &amp; <span class="red">phương tiện</span></h2>
+      <p class="section-desc">Hệ thống cơ giới đồng bộ, đội tàu chuyên dụng, nhân sự điều phối nhiều năm kinh nghiệm.</p>
+    </div>
+
+    <div class="cap-grid">
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M2 18l3-7h14l3 7"/><path d="M5 18v3M19 18v3"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="cap-name">Đội tàu vận chuyển</h3>
+          <p class="cap-desc">Sức chở 700 — 3,900 tấn/chuyến · Điều phối 24/7 linh hoạt theo nhu cầu khách hàng.</p>
+          <span class="cap-tag">700–3,900 tấn</span>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="13" height="7"/>
+            <path d="M16 11h4l1 4v3h-5"/>
+            <circle cx="6" cy="19" r="2"/><circle cx="17" cy="19" r="2"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="cap-name">Đội xe cơ giới</h3>
+          <p class="cap-desc">Xe ben Sinotruk, xe lu, máy xúc, xe đào — hệ thống đầy đủ phục vụ thi công và vận chuyển bộ.</p>
+          <span class="cap-tag">Hệ thống đồng bộ</span>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="cap-name">Đội ngũ điều phối</h3>
+          <p class="cap-desc">Giàu kinh nghiệm trong ngành VLXD và vận tải thủy, am hiểu khu vực Mekong và các cảng nội địa.</p>
+          <span class="cap-tag">Chuyên môn cao</span>
+        </div>
+      </div>
+
+      <div class="cap-card">
+        <div class="cap-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <div>
+          <h3 class="cap-name">Tiêu chuẩn chất lượng</h3>
+          <p class="cap-desc">Đạt QCVN 16:2023/BXD và ISO 9001:2015 — chứng nhận bởi NAVICONTROL Vietnam.</p>
+          <span class="cap-tag">Đạt chuẩn quốc gia</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="certs">
+      <h3 class="certs-title">Chứng nhận &amp; Tiêu chuẩn</h3>
+      <div class="certs-row">
+        <div class="cert-pill"><span class="cert-check">✓</span>QCVN 16:2023/BXD</div>
+        <div class="cert-pill"><span class="cert-check">✓</span>ISO 9001:2015</div>
+        <div class="cert-pill"><span class="cert-check">✓</span>NAVICONTROL Vietnam</div>
+        <div class="cert-pill"><span class="cert-check">✓</span>Hợp quy phương thức 7</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="content" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-pill">Bảng giá</div>
+      <h2 class="section-title">Minh bạch &amp; <span class="red">cạnh tranh</span></h2>
+      <p class="section-desc">Mức giá tham khảo cho từng loại VLXD. Liên hệ để nhận báo giá chính xác cho dự án của Quý khách.</p>
+    </div>
+
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Sản phẩm</th>
+            <th>Đơn vị</th>
+            <th>Giá tham khảo</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="product-name">Cát san lấp</div>
+              <div class="product-desc">Cát tự nhiên cho san lấp công trình</div>
+            </td>
+            <td><span class="price-unit">m³</span></td>
+            <td><span class="price-value">Liên hệ</span></td>
+            <td><a href="#contact" class="quote-btn">Báo giá</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">Cát xây dựng</div>
+              <div class="product-desc">Cát vàng đạt QCVN cho bê tông và vữa</div>
+            </td>
+            <td><span class="price-unit">m³</span></td>
+            <td><span class="price-value">Liên hệ</span></td>
+            <td><a href="#contact" class="quote-btn">Báo giá</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">Đá 1×2</div>
+              <div class="product-desc">Đá xây dựng kích thước 1-2 cm</div>
+            </td>
+            <td><span class="price-unit">m³</span></td>
+            <td><span class="price-value">Liên hệ</span></td>
+            <td><a href="#contact" class="quote-btn">Báo giá</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">Đá 4×6</div>
+              <div class="product-desc">Đá xây dựng kích thước 4-6 cm</div>
+            </td>
+            <td><span class="price-unit">m³</span></td>
+            <td><span class="price-value">Liên hệ</span></td>
+            <td><a href="#contact" class="quote-btn">Báo giá</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">Đá mi / Đá hộc</div>
+              <div class="product-desc">Đa dạng kích thước theo yêu cầu</div>
+            </td>
+            <td><span class="price-unit">m³</span></td>
+            <td><span class="price-value">Liên hệ</span></td>
+            <td><a href="#contact" class="quote-btn">Báo giá</a></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="product-name">Vận chuyển đường thủy</div>
+              <div class="product-desc">Tải trọng 700-3,900 tấn/chuyến</div>
+            </td>
+            <td><span class="price-unit">tấn/km</span></td>
+            <td><span class="price-value">Liên hệ</span></td>
+            <td><a href="#contact" class="quote-btn">Báo giá</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="price-note">
+      <strong>Lưu ý:</strong> Giá VLXD biến động theo ngày phụ thuộc nguồn cung và mùa vụ. Liên hệ Hotline <strong>092 198 55 99</strong> để nhận mức giá chính xác cho khối lượng và địa điểm cụ thể.
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="content" id="contact">
+  <div class="container">
+    <div class="contact-card">
+      <div class="contact-info">
+        <div class="section-pill">Liên hệ</div>
+        <h2>Sẵn sàng <span class="red">cung ứng</span></h2>
+        <p>Đội ngũ điều phối Khang Thịnh hoạt động 24/7. Phản hồi yêu cầu báo giá trong vòng 2 giờ làm việc.</p>
+
+        <div class="contact-channels">
+          <a href="tel:0921985599" class="contact-channel">
+            <div class="channel-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="channel-label">Hotline · 24/7</div>
+              <div class="channel-value">092 198 55 99</div>
+            </div>
+          </a>
+
+          <a href="https://zalo.me/0921985599" class="contact-channel">
+            <div class="channel-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 5.95 2 10.83c0 2.78 1.46 5.27 3.74 6.91l-.92 3.26 3.43-1.78c1.18.32 2.43.5 3.75.5 5.52 0 10-3.95 10-8.89C22 5.95 17.52 2 12 2z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="channel-label">Zalo</div>
+              <div class="channel-value">092 198 55 99</div>
+            </div>
+          </a>
+
+          <a href="mailto:khangthinhinv2025@gmail.com" class="contact-channel">
+            <div class="channel-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </div>
+            <div>
+              <div class="channel-label">Email</div>
+              <div class="channel-value" style="font-size:13px">khangthinhinv2025@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="#" class="contact-channel">
+            <div class="channel-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="channel-label">Trụ sở</div>
+              <div class="channel-value" style="font-size:13px; line-height:1.4">A3-02 KDC Long Phú,<br>xã Bến Lức, Tây Ninh</div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <form class="quote-form" id="quoteForm">
+        <h3 class="form-title">Yêu cầu báo giá</h3>
+        <p class="form-sub">Phản hồi trong 2 giờ làm việc</p>
+
+        <div class="form-row split">
+          <div>
+            <label>Họ tên <span class="req">*</span></label>
+            <input type="text" name="name" required placeholder="Nguyễn Văn A">
+          </div>
+          <div>
+            <label>SĐT <span class="req">*</span></label>
+            <input type="tel" name="phone" required placeholder="0xxx xxx xxx">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>Loại vật liệu <span class="req">*</span></label>
+          <select name="product" required>
+            <option value="">— Chọn —</option>
+            <option>Cát san lấp</option>
+            <option>Cát xây dựng</option>
+            <option>Đá 1×2</option>
+            <option>Đá 4×6</option>
+            <option>Đá mi / Đá hộc</option>
+            <option>Vận chuyển đường thủy</option>
+            <option>Thi công xây dựng</option>
+            <option>Kết hợp nhiều loại</option>
+          </select>
+        </div>
+
+        <div class="form-row split">
+          <div>
+            <label>Khối lượng</label>
+            <input type="text" name="quantity" placeholder="500 m³">
+          </div>
+          <div>
+            <label>Thời gian</label>
+            <input type="text" name="timing" placeholder="Tháng 6/2026">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>Địa điểm giao <span class="req">*</span></label>
+          <input type="text" name="location" required placeholder="Cà Mau, Long An...">
+        </div>
+
+        <div class="form-row">
+          <label>Ghi chú</label>
+          <textarea name="note" placeholder="Thông tin thêm..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Gửi yêu cầu →</button>
+
+        <div class="form-success" id="formSuccess">
+          ✓ Yêu cầu đã được gửi. Khang Thịnh sẽ liên hệ trong 2 giờ.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo">
+        <div class="logo-mark">KT</div>
+        <div class="logo-text">
+          Khang Thịnh
+          <small>INVESTMENT</small>
+        </div>
+      </div>
+      <p>Công ty TNHH Khang Thịnh Investment — chuyên cung ứng cát, đá, vận chuyển đường thủy. Đối tác Bộ Quốc phòng - Binh đoàn 12.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Dịch vụ</h4>
+      <ul>
+        <li><a href="#services">Cát san lấp</a></li>
+        <li><a href="#services">Đá xây dựng</a></li>
+        <li><a href="#services">Vận chuyển</a></li>
+        <li><a href="#services">Thi công</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Liên kết</h4>
+      <ul>
+        <li><a href="#projects">Dự án</a></li>
+        <li><a href="#capabilities">Năng lực</a></li>
+        <li><a href="#pricing">Bảng giá</a></li>
+        <li><a href="#contact">Liên hệ</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Liên hệ</h4>
+      <ul>
+        <li><a href="tel:0921985599">092 198 55 99</a></li>
+        <li><a href="mailto:khangthinhinv2025@gmail.com">Email</a></li>
+        <li><a href="https://zalo.me/0921985599">Zalo</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div>© 2026 Khang Thịnh Investment · MST: 1102107064</div>
+    <div>A3-02 KDC Long Phú, xã Bến Lức, Tây Ninh</div>
+  </div>
+</footer>
+
+<div class="float-actions">
+  <a href="https://zalo.me/0921985599" class="float-btn zalo">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2C6.48 2 2 5.95 2 10.83c0 2.78 1.46 5.27 3.74 6.91l-.92 3.26 3.43-1.78c1.18.32 2.43.5 3.75.5 5.52 0 10-3.95 10-8.89C22 5.95 17.52 2 12 2z"/>
+    </svg>
+  </a>
+  <a href="tel:0921985599" class="float-btn">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+    </svg>
+  </a>
+</div>
+
+<script>
+  document.getElementById('quoteForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.getElementById('formSuccess').classList.add('show');
+    setTimeout(() => {
+      this.reset();
+      setTimeout(() => document.getElementById('formSuccess').classList.remove('show'), 4000);
+    }, 100);
+  });
+</script>
+
+</body>
+</html>
