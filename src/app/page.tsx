@@ -48,6 +48,26 @@ export default function HomePage() {
     <>
       <Header />
 
+      {/* TODO(plan-01-02): Remove this sentinel — replaced by real Hero in Phase 3 */}
+      {/* Phase 1 sentinel — DELETE in Plan 02 / Phase 3 */}
+      <div className="bg-bone text-espresso p-8 m-4 border-4 border-burgundy">
+        <p className="font-sans font-black uppercase tracking-wide text-4xl text-burgundy">
+          KHANG THỊNH ĐỘI TÀU 3,900 TẤN
+        </p>
+        <p className="font-sans font-bold text-2xl text-burgundy-dark mt-2">
+          Cao tốc Cái Nước — Đất Mũi — Cầu Cửa Lớn
+        </p>
+        <p className="font-sans text-base text-taupe mt-4">
+          Hợp tác cùng phát triển — Đối tác Bộ Quốc phòng / Binh đoàn 12 / Trường Sơn
+        </p>
+        <div className="mt-4 grid grid-cols-4 gap-2">
+          <div className="bg-burgundy h-12" aria-label="burgundy"></div>
+          <div className="bg-terracotta h-12" aria-label="terracotta"></div>
+          <div className="bg-bone-dark h-12" aria-label="bone-dark"></div>
+          <div className="bg-espresso h-12" aria-label="espresso"></div>
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="min-h-screen bg-gradient-to-br from-[#1a5276] to-[#154360] flex items-center pt-16">
         <div className="max-w-6xl mx-auto px-4 py-20 text-white">
