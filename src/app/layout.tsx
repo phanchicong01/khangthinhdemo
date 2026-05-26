@@ -3,6 +3,7 @@
 // `subsets: ['vietnamese', 'latin']` is mandatory for correct Vietnamese diacritic rendering.
 import type { Metadata, Viewport } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
+import { siteUrl } from '@/lib/site'
 import './globals.css'
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -12,10 +13,10 @@ const beVietnamPro = Be_Vietnam_Pro({
   variable: '--font-be-vietnam-pro',
 })
 
-// NOTE: metadataBase intentionally omitted in this task — added in Plan 02 once
-// `lib/site.ts` exposes `siteUrl`. Until then, build will log a metadataBase
-// warning; Plan 02 closes that gap (Pitfall #4 / FND-05).
+// metadataBase resolved at build time from NEXT_PUBLIC_SITE_URL via lib/site.ts.
+// Default fallback: https://khangthinhinv.vn. Override via .env.local for dev/preview deploys.
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: 'Khang Thịnh Investment — Cung ứng VLXD, Xây dựng, Vận chuyển',
     template: '%s | Khang Thịnh Investment',
