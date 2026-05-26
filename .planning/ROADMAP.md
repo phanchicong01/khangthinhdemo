@@ -39,7 +39,9 @@
   4. Changing `NEXT_PUBLIC_SITE_URL` in `.env.local` propagates to a sample `console.log(siteUrl)` from `lib/site.ts` at build time; phone/Zalo/email constants importable from a single module
   5. Old skeleton folders (`src/app/dich-vu/`, `src/app/lien-he/`, `src/components/Header.tsx`) deleted; build still passes
 
-**Plans**: TBD (estimated 2-3 plans for coarse granularity)
+**Plans**: 2 plans (Wave 1 + Wave 2 — sequential, second depends on first)
+- [ ] 01-01-config-tokens-fonts.md — Lock next.config.ts + Tailwind v4 @theme Burgundy/Bone + Be Vietnam Pro via next/font/google (Wave 1, FND-01..04)
+- [ ] 01-02-site-constants-cleanup.md — Create lib/site.ts single source of truth + wire NEXT_PUBLIC_SITE_URL + delete skeleton folders (Wave 2, FND-05..07)
 
 **Risk callouts** (from PITFALLS.md):
 - Pitfall #1: silent feature breakage from `output: 'export'` — bake config + CI build check now
@@ -183,7 +185,7 @@
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation Lock-In | 0/TBD | Not started | - |
+| 1. Foundation Lock-In | 0/2 | Not started | - |
 | 2. Layout Shell | 0/TBD | Not started | - |
 | 3. Landing Sections | 0/TBD | Not started | - |
 | 4. Projects Data + `/du-an` List | 0/TBD | Not started | - |
