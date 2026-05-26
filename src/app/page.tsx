@@ -1,189 +1,63 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import Link from "next/link";
-
-const services = [
-  {
-    icon: "🪨",
-    title: "Cung ứng Cát - Đá - San lấp",
-    desc: "Cung cấp vật liệu xây dựng chất lượng cao: cát xây dựng, đá các loại, đất san lấp mặt bằng phục vụ công trình lớn nhỏ.",
-  },
-  {
-    icon: "🏗️",
-    title: "Xây dựng dân dụng",
-    desc: "Thi công nhà phố, công trình dân dụng, hạ tầng kỹ thuật. Đảm bảo tiến độ, chất lượng và an toàn công trình.",
-  },
-  {
-    icon: "🚢",
-    title: "Vận chuyển đường thủy",
-    desc: "Dịch vụ vận chuyển hàng hóa, vật liệu bằng đường thủy. Kết nối các tuyến sông khu vực miền Nam.",
-  },
-];
-
-const projects = [
-  {
-    name: "Cao tốc Cái Nước - Đất Mũi Cà Mau",
-    owner: "Bộ Quốc phòng - Binh đoàn 12 - Trường Sơn",
-    type: "Hạ tầng giao thông",
-  },
-  {
-    name: "Cầu Cửa Lớn - Đất Mũi Cà Mau",
-    owner: "Dự án cầu trọng điểm",
-    type: "Cầu đường",
-  },
-  {
-    name: "Đường giao thông ra đảo Hòn Khoai",
-    owner: "Hạ tầng đảo",
-    type: "Hạ tầng giao thông",
-  },
-  {
-    name: "Nhà phố Cô Thúy - Thạnh Hóa",
-    owner: "Công trình dân dụng",
-    type: "Xây dựng",
-  },
-];
+// ⚠️ Phase 1 sentinel — placeholder until real Hero arrives in Phase 3.
+// Purpose:
+//   1. Prove lib/site.ts → siteUrl wiring works (FND-05).
+//   2. Prove Burgundy/Bone palette utilities render (FND-03).
+//   3. Prove Be Vietnam Pro Vietnamese diacritics render correctly across weights (FND-04).
+// DELETE this entire file body in Phase 3 (replaced by composed sections).
+import { company, siteUrl, telHref, zaloHref, mailtoHref } from '@/lib/site'
 
 export default function HomePage() {
   return (
-    <>
-      <Header />
-
-      {/* TODO(plan-01-02): Remove this sentinel — replaced by real Hero in Phase 3 */}
-      {/* Phase 1 sentinel — DELETE in Plan 02 / Phase 3 */}
-      <div className="bg-bone text-espresso p-8 m-4 border-4 border-burgundy">
-        <p className="font-sans font-black uppercase tracking-wide text-4xl text-burgundy">
-          KHANG THỊNH ĐỘI TÀU 3,900 TẤN
-        </p>
-        <p className="font-sans font-bold text-2xl text-burgundy-dark mt-2">
-          Cao tốc Cái Nước — Đất Mũi — Cầu Cửa Lớn
-        </p>
-        <p className="font-sans text-base text-taupe mt-4">
-          Hợp tác cùng phát triển — Đối tác Bộ Quốc phòng / Binh đoàn 12 / Trường Sơn
-        </p>
-        <div className="mt-4 grid grid-cols-4 gap-2">
-          <div className="bg-burgundy h-12" aria-label="burgundy"></div>
-          <div className="bg-terracotta h-12" aria-label="terracotta"></div>
-          <div className="bg-bone-dark h-12" aria-label="bone-dark"></div>
-          <div className="bg-espresso h-12" aria-label="espresso"></div>
-        </div>
-      </div>
-
-      {/* Hero */}
-      <section className="min-h-screen bg-gradient-to-br from-[#1a5276] to-[#154360] flex items-center pt-16">
-        <div className="max-w-6xl mx-auto px-4 py-20 text-white">
-          <div className="max-w-2xl">
-            <div className="inline-block bg-[#f39c12] text-[#1c2833] text-xs font-bold px-3 py-1 rounded-full mb-6 uppercase tracking-wider">
-              Thành lập 2025 · Tây Ninh
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Khang Thịnh Investment
-            </h1>
-            <p className="text-xl text-blue-200 mb-4 italic">
-              "Hợp tác cùng phát triển"
-            </p>
-            <p className="text-base text-blue-100 leading-relaxed mb-8">
-              Chuyên cung ứng vật liệu xây dựng, thi công công trình dân dụng
-              và vận chuyển đường thủy. Đối tác tin cậy của nhiều dự án quốc gia
-              tại miền Nam Việt Nam.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="tel:0921985599"
-                className="bg-[#f39c12] hover:bg-[#e67e22] text-[#1c2833] font-bold px-6 py-3 rounded-lg transition-colors"
-              >
-                📞 Liên hệ ngay
-              </a>
-              <Link
-                href="/du-an"
-                className="border border-white text-white hover:bg-white/10 px-6 py-3 rounded-lg transition-colors"
-              >
-                Xem dự án tiêu biểu →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section className="py-20 bg-gray-50" id="dich-vu">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1a5276] mb-3">Dịch vụ của chúng tôi</h2>
-            <p className="text-gray-500">Giải pháp toàn diện cho công trình xây dựng và hạ tầng</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.map((s, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-shadow border border-gray-100">
-                <div className="text-4xl mb-4">{s.icon}</div>
-                <h3 className="text-lg font-bold text-[#1a5276] mb-3">{s.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Projects */}
-      <section className="py-20 bg-white" id="du-an">
-        <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#1a5276] mb-3">Dự án tiêu biểu</h2>
-            <p className="text-gray-500">Những công trình chúng tôi đã và đang tham gia thực hiện</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projects.map((p, i) => (
-              <div key={i} className="flex gap-4 p-5 rounded-xl bg-gray-50 border border-gray-100 hover:border-[#2e86c1] transition-colors">
-                <div className="w-10 h-10 rounded-full bg-[#1a5276] text-white flex items-center justify-center font-bold text-sm flex-shrink-0">
-                  {i + 1}
-                </div>
-                <div>
-                  <div className="font-semibold text-[#1c2833] mb-1">{p.name}</div>
-                  <div className="text-xs text-gray-500">{p.owner}</div>
-                  <span className="mt-2 inline-block text-xs bg-blue-100 text-[#1a5276] px-2 py-0.5 rounded-full">
-                    {p.type}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link
-              href="/du-an"
-              className="inline-block bg-[#1a5276] hover:bg-[#154360] text-white px-6 py-3 rounded-lg transition-colors"
-            >
-              Xem tất cả dự án →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-16 bg-[#f39c12]">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-[#1c2833] mb-4">
-            Bạn có nhu cầu hợp tác?
-          </h2>
-          <p className="text-[#5d4037] mb-8 text-base">
-            Liên hệ ngay để được tư vấn và báo giá nhanh chóng
+    <main className="min-h-screen bg-bone text-espresso p-8">
+      <section className="max-w-3xl mx-auto space-y-6">
+        <header className="border-b-4 border-burgundy pb-4">
+          <p className="font-sans text-sm uppercase tracking-widest text-taupe">
+            Phase 1 — Foundation Lock-In · Sentinel
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="tel:0921985599"
-              className="bg-[#1a5276] hover:bg-[#154360] text-white font-bold px-8 py-3 rounded-lg transition-colors"
-            >
-              📞 092 198 55 99
-            </a>
-            <a
-              href="mailto:khangthinhinv2025@gmail.com"
-              className="bg-white hover:bg-gray-100 text-[#1a5276] font-bold px-8 py-3 rounded-lg transition-colors"
-            >
-              ✉️ Gửi email
-            </a>
-          </div>
-        </div>
-      </section>
+          <h1 className="font-sans font-black uppercase tracking-wide text-4xl md:text-5xl text-burgundy mt-2">
+            {company.shortName} — Đội tàu 3,900 tấn
+          </h1>
+          <p className="font-sans italic text-burgundy-dark mt-2">
+            &quot;{company.tagline}&quot;
+          </p>
+        </header>
 
-      <Footer />
-    </>
-  );
+        {/* Vietnamese diacritic stress test — all weights 400→900 */}
+        <div className="bg-bone-dark p-4 space-y-1 border border-taupe">
+          <p className="font-sans font-normal">400 — Cao tốc Cái Nước · Đất Mũi Cà Mau · Hợp tác cùng phát triển</p>
+          <p className="font-sans font-medium">500 — Cầu Cửa Lớn · Đường ra đảo Hòn Khoai</p>
+          <p className="font-sans font-semibold">600 — Cung ứng cát, đá, san lấp · Xây dựng dân dụng</p>
+          <p className="font-sans font-bold">700 — Vận chuyển đường thủy · Trường Sơn · Binh đoàn 12</p>
+          <p className="font-sans font-extrabold uppercase">800 — KHANG THỊNH ĐẦU TƯ — TÂY NINH</p>
+          <p className="font-sans font-black uppercase tracking-wide">900 — KHANG THỊNH ĐỘI TÀU 3,900 TẤN — BỘ QUỐC PHÒNG</p>
+        </div>
+
+        {/* Palette swatch — proves all 8 @theme tokens generate utilities */}
+        <div className="grid grid-cols-4 gap-2">
+          <div className="bg-burgundy text-bone p-3 text-xs">burgundy</div>
+          <div className="bg-burgundy-dark text-bone p-3 text-xs">burgundy-dark</div>
+          <div className="bg-terracotta text-bone p-3 text-xs">terracotta</div>
+          <div className="bg-coffee text-bone p-3 text-xs">coffee</div>
+          <div className="bg-bone text-espresso p-3 text-xs border border-taupe">bone</div>
+          <div className="bg-bone-dark text-espresso p-3 text-xs border border-taupe">bone-dark</div>
+          <div className="bg-espresso text-bone p-3 text-xs">espresso</div>
+          <div className="bg-taupe text-bone p-3 text-xs">taupe</div>
+        </div>
+
+        {/* Env-var sanity — proves NEXT_PUBLIC_SITE_URL propagates (FND-05) */}
+        <div className="bg-espresso text-bone p-4 font-mono text-sm space-y-1">
+          <p>siteUrl = {siteUrl}</p>
+          <p>tel = {telHref()}</p>
+          <p>zalo = {zaloHref()}</p>
+          <p>mail = {mailtoHref()}</p>
+          <p>mst = {company.taxIdDisplay}</p>
+          <p>address = {company.address.full}</p>
+        </div>
+
+        <p className="font-sans text-sm text-taupe italic">
+          Phase 1 only — real Hero, Services, Projects, Contact sections arrive in Phase 3.
+        </p>
+      </section>
+    </main>
+  )
 }
