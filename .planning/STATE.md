@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to execute
-stopped_at: Completed 01-01-config-tokens-fonts-PLAN.md
-last_updated: "2026-05-26T09:42:15.365Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 01-02-site-constants-cleanup-PLAN.md
+last_updated: "2026-05-26T11:44:53.956Z"
 progress:
   total_phases: 6
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
+  completed_plans: 2
 ---
 
 # Project State
@@ -47,6 +47,7 @@ Plan: 2 of 2
 
 *Updated after each plan completion*
 | Phase 01 P01 | 3 | 4 tasks | 5 files |
+| Phase 01 P02 | 20min | 5 tasks | 9 files |
 
 ## Accumulated Context
 
@@ -63,6 +64,9 @@ Recent decisions affecting current work:
 - Init: Site URL qua env var `NEXT_PUBLIC_SITE_URL`
 - [Phase 01]: Adopted next/font/google over @fontsource (per RESEARCH.md prescription)
 - [Phase 01]: Tailwind v4: @theme {} for utility tokens; @theme inline {} for var-referencing tokens; :root {} for semantic aliases
+- [Phase 01]: Use `??` (nullish coalescing) not `||` for siteUrl fallback — empty env vars must fail loudly
+- [Phase 01]: Three explicit phone formats in lib/site.ts (display/E.164/raw) — prevents Pitfall #7 tel-href breakage
+- [Phase 01]: Auto-fix: stripped Header/Footer from /du-an page rather than deleting the route (PROJECT.md requires /du-an)
 
 ### Pending Todos
 
@@ -74,6 +78,6 @@ None yet. Pre-Phase-1 lock checklist resolved in initialization (font, deploy, d
 
 ## Session Continuity
 
-Last session: 2026-05-26T09:42:15.362Z
-Stopped at: Completed 01-01-config-tokens-fonts-PLAN.md
+Last session: 2026-05-26T11:44:53.953Z
+Stopped at: Completed 01-02-site-constants-cleanup-PLAN.md
 Resume file: None

@@ -13,9 +13,9 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **FND-02**: TypeScript strict mode enabled, build passes `npm run build` without errors
 - [x] **FND-03**: Tailwind CSS v4 design tokens defined in `globals.css` via `@theme` directive (Burgundy/Bone palette)
 - [x] **FND-04**: Be Vietnam Pro font (weights 400/500/600/700/800/900) loaded via `next/font/google` with explicit `subsets: ['vietnamese', 'latin']`
-- [ ] **FND-05**: Site URL configurable via `NEXT_PUBLIC_SITE_URL` env var (default placeholder `https://khangthinhinv.vn`)
-- [ ] **FND-06**: Company facts (phone, Zalo URL, email, MST, address) live in `lib/site.ts` as single source of truth
-- [ ] **FND-07**: Old skeleton folders removed (`src/app/dich-vu/`, `src/app/lien-he/`, `src/components/Header.tsx`)
+- [x] **FND-05**: Site URL configurable via `NEXT_PUBLIC_SITE_URL` env var (default placeholder `https://khangthinhinv.vn`)
+- [x] **FND-06**: Company facts (phone, Zalo URL, email, MST, address) live in `lib/site.ts` as single source of truth
+- [x] **FND-07**: Old skeleton folders removed (`src/app/dich-vu/`, `src/app/lien-he/`, `src/components/Header.tsx`)
 
 ### Layout Shell
 
