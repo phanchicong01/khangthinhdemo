@@ -1,8 +1,52 @@
 @import "tailwindcss";
 
+/* ------------------------------------------------------------------ */
+/* Design tokens — Tailwind v4 @theme block.                          */
+/* --color-* generates bg-*, text-*, border-*, ring-*, fill-* utilities. */
+/* --font-* generates font-* utilities.                               */
+/* Custom variables outside reserved namespaces produce NO utility    */
+/* (silent failure — see RESEARCH.md Pitfall #3).                     */
+/* ------------------------------------------------------------------ */
+@theme {
+  /* Palette: Burgundy + Bone (light mode) */
+  --color-burgundy: #6B1F1F;
+  --color-burgundy-dark: #4A1414;
+  --color-terracotta: #B85450;
+  --color-coffee: #3A1F1A;
+  --color-bone: #F5F1EA;
+  --color-bone-dark: #EBE4D6;
+  --color-espresso: #1A1410;
+  --color-taupe: #8B7355;
+}
+
+/* @theme inline is REQUIRED when a token references another CSS var.
+   Without `inline`, var(--font-be-vietnam-pro) resolves at definition
+   scope (the root), not where the utility is applied → silent failure. */
+@theme inline {
+  --font-sans: var(--font-be-vietnam-pro);
+}
+
+/* Semantic aliases (NOT in @theme — these don't need utility classes;
+   they're consumed only via var() in base styles, future dark-mode swap. */
 :root {
-  --color-primary: #1a5276;
-  --color-primary-light: #2e86c1;
-  --color-accent: #f39c12;
-  --color-dark: #1c2833;
+  --color-bg: var(--color-bone);
+  --color-bg-alt: var(--color-bone-dark);
+  --color-fg: var(--color-espresso);
+  --color-fg-muted: var(--color-taupe);
+  --color-primary: var(--color-burgundy);
+  --color-primary-hover: var(--color-burgundy-dark);
+  --color-accent: var(--color-terracotta);
+}
+
+/* Base styles */
+html { scroll-behavior: smooth; }
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
