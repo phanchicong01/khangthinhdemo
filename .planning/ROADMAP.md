@@ -40,7 +40,7 @@
   5. Old skeleton folders (`src/app/dich-vu/`, `src/app/lien-he/`, `src/components/Header.tsx`) deleted; build still passes
 
 **Plans**: 2 plans (Wave 1 + Wave 2 — sequential, second depends on first)
-- [ ] 01-01-config-tokens-fonts.md — Lock next.config.ts + Tailwind v4 @theme Burgundy/Bone + Be Vietnam Pro via next/font/google (Wave 1, FND-01..04)
+- [x] 01-01-config-tokens-fonts.md — Lock next.config.ts + Tailwind v4 @theme Burgundy/Bone + Be Vietnam Pro via next/font/google (Wave 1, FND-01..04)
 - [ ] 01-02-site-constants-cleanup.md — Create lib/site.ts single source of truth + wire NEXT_PUBLIC_SITE_URL + delete skeleton folders (Wave 2, FND-05..07)
 
 **Risk callouts** (from PITFALLS.md):
