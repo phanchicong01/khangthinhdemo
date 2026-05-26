@@ -20,11 +20,15 @@ Website giới thiệu công ty TNHH Khang Thịnh Investment — một doanh ng
 - [ ] Trang `/du-an` danh sách dự án (list view, không có detail page ở phase 1)
 - [ ] Palette Burgundy + Bone (light mode) thay tone đỏ-đen của Mẫu A gốc
 - [ ] 3 CTA liên hệ: tel/zalo/mailto + FloatingZalo button cố định
-- [ ] SEO foundation: metadata, OpenGraph, sitemap.xml, robots.txt
+- [ ] SEO foundation: metadata, OpenGraph (static PNG), sitemap.ts, robots.ts, JSON-LD `GeneralContractor`
 - [ ] Responsive: mobile 375px → desktop 1440px
-- [ ] Static export (`output: 'export'`) — deploy được lên GitHub Pages/Netlify/Vercel
+- [ ] Static export (`output: 'export'`) — deploy Cloudflare Pages
 - [ ] Type-safe (TypeScript strict) + build pass `npm run build`
 - [ ] Lighthouse: Performance ≥ 90, SEO ≥ 95, Accessibility ≥ 90
+- [ ] 1 font family (Be Vietnam Pro 400-900) với subset Vietnamese qua `next/font/google`
+- [ ] Site URL qua env var `NEXT_PUBLIC_SITE_URL`
+- [ ] Phone/Zalo/Email là single source of truth trong `lib/site.ts`
+- [ ] Cloudflare Web Analytics tích hợp
 
 ### Out of Scope
 
@@ -35,6 +39,11 @@ Website giới thiệu công ty TNHH Khang Thịnh Investment — một doanh ng
 - **CMS / admin panel** — Content thay đổi không thường xuyên; edit trực tiếp code đủ dùng
 - **Logo đối tác** (Binh đoàn 12, Trường Sơn, Bộ Quốc phòng) — Risk bản quyền; dùng text marquee thay vì image
 - **JetBrains Mono font** — Chỉ dùng ít chỗ; dùng `font-mono` system stack đủ
+- **Bebas Neue font** — Không có Vietnamese diacritics; thay bằng Be Vietnam Pro 800/900 uppercase
+- **GitHub Pages deploy** — ToS cấm "primarily commercial" sites
+- **Framer Motion / motion v12** — Quá nặng (~34-50KB) cho marketing site; dùng CSS-only + Motion One nếu thực sự cần
+- **next-sitemap package** — Next 15 built-in `app/sitemap.ts` + `app/robots.ts` đủ dùng
+- **ImageResponse cho OG dynamic** — Satori CSS subset hạn chế + Vietnamese diacritic fragile; dùng static `/public/og-image.png`
 - **Google Maps embed** — Phase 1 ưu tiên CTA liên hệ; map có thể thêm sau
 - **Trang About `/ve-chung-toi`** — Thông tin công ty đủ trong Hero + Footer + Capabilities; thêm trang riêng nếu cần sau
 
@@ -81,7 +90,13 @@ Website giới thiệu công ty TNHH Khang Thịnh Investment — một doanh ng
 | Bỏ contact form, dùng CTA call/zalo/mailto | B2B ngành xây dựng chuộng liên hệ trực tiếp | — Pending |
 | Partners marquee dùng text không dùng logo image | Tránh risk bản quyền logo Binh đoàn 12 / Trường Sơn | — Pending |
 | Hoãn /du-an/[slug] detail page | Chưa có content chi tiết đủ để fill | — Pending |
-| 2 font families (Be Vietnam Pro + Bebas Neue), bỏ JetBrains Mono | Giảm bundle font, dùng system mono khi cần | — Pending |
+| 1 font family (Be Vietnam Pro 400-900), bỏ Bebas Neue | Bebas Neue không có Vietnamese diacritics → break Hero/headings; dùng Be Vietnam Pro weight 800/900 + uppercase + letter-spacing để có industrial display feel | — Pending |
+| Deploy lên Cloudflare Pages | Free, unlimited bandwidth, commercial-OK, VN edge POPs, cookieless analytics; GitHub Pages cấm commercial use | — Pending |
+| Font load qua `next/font/google` với subset Vietnamese explicit | Built-in Next.js, tự động optimize, tránh CLS | — Pending |
+| Site URL qua env var `NEXT_PUBLIC_SITE_URL` | Tránh hardcode domain — đổi 1 chỗ khi có domain thật | — Pending |
+| Animation: CSS-only default, Motion One (4KB) nếu cần count-up | Tránh bloat bundle (Framer Motion ~34-50KB cho marketing site là overkill) | — Pending |
+| Icons: lucide-react | Tree-shakable, broad set, industrial line aesthetic | — Pending |
+| Analytics: Cloudflare Web Analytics | Free, cookieless, không cần consent banner (VN PDPL friendly) | — Pending |
 
 ## Evolution
 
