@@ -1,5 +1,6 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+// NOTE(plan-01-02): Header/Footer imports stripped — skeleton Header.tsx/Footer.tsx
+// deleted in Phase 1 (FND-07). Phase 2 will introduce new Nav/Footer; this page
+// is a placeholder list view until Phase 3 rewrites it.
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -73,7 +74,6 @@ const typeColors: Record<string, string> = {
 export default function DuAnPage() {
   return (
     <>
-      <Header />
       <main className="pt-16">
         {/* Hero */}
         <section className="bg-[#1a5276] text-white py-16">
@@ -114,7 +114,6 @@ export default function DuAnPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }
