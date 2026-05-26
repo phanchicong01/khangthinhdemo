@@ -67,7 +67,9 @@
   5. Real-device smoke test passes: on iOS Safari and Android Chrome, tapping the Nav hotline opens the dialer, tapping FloatingZalo opens Zalo app/web, mailto link composes an email
   6. Root `layout.tsx` declares default metadata (title template, description, OG image stub, `metadataBase`, viewport, `lang="vi"`) and renders Nav/Footer/FloatingZalo around `{children}`
 
-**Plans**: TBD (estimated 2 plans for coarse granularity — Shell components + real-device CTA verification)
+**Plans**: 2 plans (Wave 1 + Wave 2 — sequential; smoke test depends on shell)
+- [ ] 02-01-shell-components-PLAN.md — Nav + Footer + FloatingZalo + layout wiring + anchor placeholders (Wave 1, SHELL-01..05)
+- [ ] 02-02-real-device-smoke-test-PLAN.md — iOS Safari + Android Chrome CTA + smooth-scroll verification (Wave 2, SHELL-03, SHELL-04)
 
 **Risk callouts** (from PITFALLS.md):
 - Pitfall #7: broken `tel:`/Zalo CTAs — use `tel:+84921985599` (E.164, no spaces) and `https://zalo.me/0921985599` (HTTPS), never `zalo://`
@@ -186,7 +188,7 @@
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Foundation Lock-In | 0/2 | Not started | - |
-| 2. Layout Shell | 0/TBD | Not started | - |
+| 2. Layout Shell | 0/2 | Not started | - |
 | 3. Landing Sections | 0/TBD | Not started | - |
 | 4. Projects Data + `/du-an` List | 0/TBD | Not started | - |
 | 5. SEO + Schema + Polish | 0/TBD | Not started | - |
