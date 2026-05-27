@@ -1,62 +1,101 @@
-// ⚠️ Phase 1 sentinel — placeholder until real Hero arrives in Phase 3.
-// Purpose:
-//   1. Prove lib/site.ts → siteUrl wiring works (FND-05).
-//   2. Prove Burgundy/Bone palette utilities render (FND-03).
-//   3. Prove Be Vietnam Pro Vietnamese diacritics render correctly across weights (FND-04).
-// DELETE this entire file body in Phase 3 (replaced by composed sections).
+// Phase 2 — anchor placeholder sections wired to Nav anchors (D-05/D-06).
+// Each section will be replaced by the real Phase 3 component:
+//   #dich-vu  → Services        (SEC-03)
+//   #du-an    → Projects        (SEC-04)
+//   #nang-luc → Capabilities    (SEC-06)
+//   #doi-tac  → PartnersMarquee (SEC-02)
+//   #lien-he  → Contact         (SEC-08)
+// Phase 1 sentinel content is preserved inside #nang-luc as a debug card —
+// safe to delete in Phase 3.
 import { company, siteUrl, telHref, zaloHref, mailtoHref } from '@/lib/site'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-bone text-espresso p-8">
-      <section className="max-w-3xl mx-auto space-y-6">
-        <header className="border-b-4 border-burgundy pb-4">
-          <p className="font-sans text-sm uppercase tracking-widest text-taupe">
-            Phase 1 — Foundation Lock-In · Sentinel
-          </p>
-          <h1 className="font-sans font-black uppercase tracking-wide text-4xl md:text-5xl text-burgundy mt-2">
-            {company.shortName} — Đội tàu 3,900 tấn
-          </h1>
-          <p className="font-sans italic text-burgundy-dark mt-2">
-            &quot;{company.tagline}&quot;
-          </p>
-        </header>
-
-        {/* Vietnamese diacritic stress test — all weights 400→900 */}
-        <div className="bg-bone-dark p-4 space-y-1 border border-taupe">
-          <p className="font-sans font-normal">400 — Cao tốc Cái Nước · Đất Mũi Cà Mau · Hợp tác cùng phát triển</p>
-          <p className="font-sans font-medium">500 — Cầu Cửa Lớn · Đường ra đảo Hòn Khoai</p>
-          <p className="font-sans font-semibold">600 — Cung ứng cát, đá, san lấp · Xây dựng dân dụng</p>
-          <p className="font-sans font-bold">700 — Vận chuyển đường thủy · Trường Sơn · Binh đoàn 12</p>
-          <p className="font-sans font-extrabold uppercase">800 — KHANG THỊNH ĐẦU TƯ — TÂY NINH</p>
-          <p className="font-sans font-black uppercase tracking-wide">900 — KHANG THỊNH ĐỘI TÀU 3,900 TẤN — BỘ QUỐC PHÒNG</p>
-        </div>
-
-        {/* Palette swatch — proves all 8 @theme tokens generate utilities */}
-        <div className="grid grid-cols-4 gap-2">
-          <div className="bg-burgundy text-bone p-3 text-xs">burgundy</div>
-          <div className="bg-burgundy-dark text-bone p-3 text-xs">burgundy-dark</div>
-          <div className="bg-terracotta text-bone p-3 text-xs">terracotta</div>
-          <div className="bg-coffee text-bone p-3 text-xs">coffee</div>
-          <div className="bg-bone text-espresso p-3 text-xs border border-taupe">bone</div>
-          <div className="bg-bone-dark text-espresso p-3 text-xs border border-taupe">bone-dark</div>
-          <div className="bg-espresso text-bone p-3 text-xs">espresso</div>
-          <div className="bg-taupe text-bone p-3 text-xs">taupe</div>
-        </div>
-
-        {/* Env-var sanity — proves NEXT_PUBLIC_SITE_URL propagates (FND-05) */}
-        <div className="bg-espresso text-bone p-4 font-mono text-sm space-y-1">
-          <p>siteUrl = {siteUrl}</p>
-          <p>tel = {telHref()}</p>
-          <p>zalo = {zaloHref()}</p>
-          <p>mail = {mailtoHref()}</p>
-          <p>mst = {company.taxIdDisplay}</p>
-          <p>address = {company.address.full}</p>
-        </div>
-
-        <p className="font-sans text-sm text-taupe italic">
-          Phase 1 only — real Hero, Services, Projects, Contact sections arrive in Phase 3.
+    <main className="min-h-screen">
+      {/* Top hero placeholder so sticky nav has something to scroll past */}
+      <section className="bg-bone px-4 py-24 text-center">
+        <p className="text-sm uppercase tracking-widest text-taupe">
+          Phase 2 — Layout Shell · Anchor Placeholders
         </p>
+        <h1 className="font-black uppercase tracking-wide text-4xl md:text-5xl text-burgundy mt-3">
+          {company.shortName}
+        </h1>
+        <p className="italic text-burgundy-dark mt-2">&quot;{company.tagline}&quot;</p>
+      </section>
+
+      <section id="dich-vu" className="bg-bone-dark px-4 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-black uppercase tracking-wide text-3xl text-burgundy">
+            Dịch vụ
+          </h2>
+          <p className="mt-3 text-espresso">
+            Placeholder — Phase 3 sẽ render 3 cards Services (Cung ứng VLXD · Xây dựng dân
+            dụng · Vận chuyển đường thủy).
+          </p>
+        </div>
+      </section>
+
+      <section id="du-an" className="bg-bone px-4 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-black uppercase tracking-wide text-3xl text-burgundy">
+            Dự án
+          </h2>
+          <p className="mt-3 text-espresso">
+            Placeholder — Phase 3 sẽ render 4 dự án tiêu biểu (Cao tốc Cái Nước · Cầu Cửa
+            Lớn · Hòn Khoai · Nhà phố).
+          </p>
+        </div>
+      </section>
+
+      <section id="nang-luc" className="bg-bone-dark px-4 py-20">
+        <div className="max-w-6xl mx-auto space-y-8">
+          <h2 className="font-black uppercase tracking-wide text-3xl text-burgundy">
+            Năng lực
+          </h2>
+          <p className="text-espresso">
+            Placeholder — Phase 3 sẽ render BigStats + Capabilities (đội tàu 700–3,900
+            tấn, cơ giới, đội xây lắp).
+          </p>
+
+          {/* Phase 1 sentinel debug card — DELETE in Phase 3 */}
+          <details className="bg-espresso text-bone p-4 rounded-sm">
+            <summary className="cursor-pointer font-mono text-sm">
+              Phase 1 sentinel (debug — remove in Phase 3)
+            </summary>
+            <div className="mt-3 font-mono text-xs space-y-1">
+              <p>siteUrl = {siteUrl}</p>
+              <p>tel = {telHref()}</p>
+              <p>zalo = {zaloHref()}</p>
+              <p>mail = {mailtoHref()}</p>
+              <p>mst = {company.taxIdDisplay}</p>
+              <p>address = {company.address.full}</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <section id="doi-tac" className="bg-bone px-4 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-black uppercase tracking-wide text-3xl text-burgundy">
+            Đối tác
+          </h2>
+          <p className="mt-3 text-espresso">
+            Placeholder — Phase 3 sẽ render PartnersMarquee (BINH ĐOÀN 12 · TRƯỜNG SƠN ·
+            BỘ QUỐC PHÒNG · …).
+          </p>
+        </div>
+      </section>
+
+      <section id="lien-he" className="bg-bone-dark px-4 py-20">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="font-black uppercase tracking-wide text-3xl text-burgundy">
+            Liên hệ
+          </h2>
+          <p className="mt-3 text-espresso">
+            Placeholder — Phase 3 sẽ render Contact section với 3 CTA (Gọi · Zalo ·
+            Email).
+          </p>
+        </div>
       </section>
     </main>
   )

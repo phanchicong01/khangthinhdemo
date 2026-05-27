@@ -50,3 +50,10 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* Sticky-nav anchor offset (PITFALLS + D-20).
+   Nav is 4rem tall (h-16); 4.5rem gives a small breathing buffer
+   so section <h2> is not flush against nav bottom. */
+section[id] {
+  scroll-margin-top: 4.5rem;
+}

@@ -4,6 +4,9 @@
 import type { Metadata, Viewport } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import { siteUrl } from '@/lib/site'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import FloatingZalo from '@/components/layout/FloatingZalo'
 import './globals.css'
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -34,7 +37,12 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="vi" className={beVietnamPro.variable}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <Nav />
+        {children}
+        <Footer />
+        <FloatingZalo />
+      </body>
     </html>
   )
 }
