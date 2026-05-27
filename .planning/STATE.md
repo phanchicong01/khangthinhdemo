@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase complete — ready for verification
-stopped_at: Completed 02-02-real-device-smoke-test-PLAN.md (Phase 2 complete)
-last_updated: "2026-05-27T11:00:10.547Z"
+status: Ready to execute
+stopped_at: Completed 03-01-above-fold-showcase-PLAN.md
+last_updated: "2026-05-27T17:08:24.173Z"
 progress:
   total_phases: 6
   completed_phases: 2
-  total_plans: 4
-  completed_plans: 4
+  total_plans: 6
+  completed_plans: 5
 ---
 
 # Project State
@@ -19,11 +19,11 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-26)
 
 **Core value:** Khách hàng tiềm năng — sau khi xem website — tin tưởng đủ để gọi/Zalo liên hệ tư vấn
-**Current focus:** Phase 02 — layout-shell
+**Current focus:** Phase 03 — landing-sections
 
 ## Current Position
 
-Phase: 02 (layout-shell) — EXECUTING
+Phase: 03 (landing-sections) — EXECUTING
 Plan: 2 of 2
 
 ## Performance Metrics
@@ -50,6 +50,7 @@ Plan: 2 of 2
 | Phase 01 P02 | 20min | 5 tasks | 9 files |
 | Phase 02 P01 | 3min | 3 tasks | 8 files |
 | Phase 02 P02 | 5min | 1 tasks | 1 files |
+| Phase 03 P01 | 3min | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -73,6 +74,9 @@ Recent decisions affecting current work:
 - [Phase 02]: Placed shell components under src/components/layout/ (nested) anticipating Phase 3 src/components/sections/
 - [Phase 02]: Preserved Phase 1 sentinel content inside #nang-luc <details> debug card; will be removed in Phase 3
 - [Phase 02]: Phase 02: Real-device CTA smoke test PASSED on iOS Safari + Android Chrome — tel/zalo.me/mailto handlers all fire, smooth-scroll lands below sticky nav, FloatingZalo FAB visibility OK. Phase 2 complete.
+- [Phase 03]: Phase 03: Project years 2024/2025 in Projects.tsx are BEST-GUESS per CONTEXT D-16 — user must confirm before Phase 4 lib/projects.ts extraction
+- [Phase 03]: Phase 03: Server-component-by-default for sections — marquee animation pure CSS @keyframes translateX with prefers-reduced-motion guard, no client component added
+- [Phase 03]: Phase 03: Project icon picks Construction/GitBranch/Anchor/Home; color-block alternation P1=burgundy, P2=espresso, P3=espresso, P4=burgundy (no adjacent same color in 2-col grid)
 
 ### Pending Todos
 
@@ -84,6 +88,6 @@ None yet. Pre-Phase-1 lock checklist resolved in initialization (font, deploy, d
 
 ## Session Continuity
 
-Last session: 2026-05-27T11:00:10.545Z
-Stopped at: Completed 02-02-real-device-smoke-test-PLAN.md (Phase 2 complete)
+Last session: 2026-05-27T17:08:16.085Z
+Stopped at: Completed 03-01-above-fold-showcase-PLAN.md
 Resume file: None

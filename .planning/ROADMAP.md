@@ -98,7 +98,7 @@
   7. Capabilities, CtaQuote (full-width espresso banner with "Yêu cầu báo giá" + prominent CTA), and Contact (info + 3 working CTA buttons tel/zalo/mailto with icons) all render correctly at 375px / 768px / 1280px breakpoints
 
 **Plans**: 2 plans (Wave 1 + Wave 2 — sequential; compose plan depends on above-fold plan)
-- [ ] 03-01-above-fold-showcase-PLAN.md — Hero + PartnersMarquee + Services + Projects components + marquee keyframes in globals.css (Wave 1, SEC-01..04)
+- [x] 03-01-above-fold-showcase-PLAN.md — Hero + PartnersMarquee + Services + Projects components + marquee keyframes in globals.css (Wave 1, SEC-01..04)
 - [ ] 03-02-stats-close-compose-PLAN.md — BigStats + Capabilities + CtaQuote + Contact components + rewrite app/page.tsx (compose 8 sections + delete Phase 1 sentinel) + build verify (Wave 2, SEC-05..08)
 
 **Risk callouts** (from PITFALLS.md):
