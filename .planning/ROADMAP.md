@@ -97,7 +97,9 @@
   6. BigStats shows honest numbers (tonnage 700–3,900 tấn, 4 dự án tiêu biểu, năm thành lập 2025, đối tác Quốc phòng) — no fake "20 năm kinh nghiệm"
   7. Capabilities, CtaQuote (full-width espresso banner with "Yêu cầu báo giá" + prominent CTA), and Contact (info + 3 working CTA buttons tel/zalo/mailto with icons) all render correctly at 375px / 768px / 1280px breakpoints
 
-**Plans**: TBD (estimated 2-3 plans for coarse granularity — likely Hero+Partners+Services in one, Projects+BigStats+Capabilities in another, CtaQuote+Contact+compose in a third)
+**Plans**: 2 plans (Wave 1 + Wave 2 — sequential; compose plan depends on above-fold plan)
+- [ ] 03-01-above-fold-showcase-PLAN.md — Hero + PartnersMarquee + Services + Projects components + marquee keyframes in globals.css (Wave 1, SEC-01..04)
+- [ ] 03-02-stats-close-compose-PLAN.md — BigStats + Capabilities + CtaQuote + Contact components + rewrite app/page.tsx (compose 8 sections + delete Phase 1 sentinel) + build verify (Wave 2, SEC-05..08)
 
 **Risk callouts** (from PITFALLS.md):
 - Pitfall #5: Hero LCP fail — keep CSS pattern (no real photo) in Phase 1, `priority` on any LCP element
@@ -189,7 +191,7 @@
 |-------|----------------|--------|-----------|
 | 1. Foundation Lock-In | 0/2 | Not started | - |
 | 2. Layout Shell | 0/2 | Not started | - |
-| 3. Landing Sections | 0/TBD | Not started | - |
+| 3. Landing Sections | 0/2 | Not started | - |
 | 4. Projects Data + `/du-an` List | 0/TBD | Not started | - |
 | 5. SEO + Schema + Polish | 0/TBD | Not started | - |
 | 6. Audit + Launch | 0/TBD | Not started | - |
