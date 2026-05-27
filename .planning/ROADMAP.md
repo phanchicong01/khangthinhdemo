@@ -68,7 +68,7 @@
   6. Root `layout.tsx` declares default metadata (title template, description, OG image stub, `metadataBase`, viewport, `lang="vi"`) and renders Nav/Footer/FloatingZalo around `{children}`
 
 **Plans**: 2 plans (Wave 1 + Wave 2 — sequential; smoke test depends on shell)
-- [ ] 02-01-shell-components-PLAN.md — Nav + Footer + FloatingZalo + layout wiring + anchor placeholders (Wave 1, SHELL-01..05)
+- [x] 02-01-shell-components-PLAN.md — Nav + Footer + FloatingZalo + layout wiring + anchor placeholders (Wave 1, SHELL-01..05)
 - [ ] 02-02-real-device-smoke-test-PLAN.md — iOS Safari + Android Chrome CTA + smooth-scroll verification (Wave 2, SHELL-03, SHELL-04)
 
 **Risk callouts** (from PITFALLS.md):

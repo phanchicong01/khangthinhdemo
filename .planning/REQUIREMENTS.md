@@ -19,11 +19,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Layout Shell
 
-- [ ] **SHELL-01**: Sticky `Nav` component với logo + 5 anchor links + CTA "Báo giá", visible hotline trên desktop, mobile menu collapse
-- [ ] **SHELL-02**: `Footer` component với company legal info (MST, address, email, phone) + copyright
-- [ ] **SHELL-03**: `FloatingZalo` button fixed bottom-right, hiển thị trên cả mobile + desktop, deep link `https://zalo.me/0921985599`
-- [ ] **SHELL-04**: Smooth scroll cho anchor links (#services, #projects, #capabilities, #contact)
-- [ ] **SHELL-05**: Root `layout.tsx` với metadata default (title template, description, OG image, robots, viewport)
+- [x] **SHELL-01**: Sticky `Nav` component với logo + 5 anchor links + CTA "Báo giá", visible hotline trên desktop, mobile menu collapse
+- [x] **SHELL-02**: `Footer` component với company legal info (MST, address, email, phone) + copyright
+- [x] **SHELL-03**: `FloatingZalo` button fixed bottom-right, hiển thị trên cả mobile + desktop, deep link `https://zalo.me/0921985599`
+- [x] **SHELL-04**: Smooth scroll cho anchor links (#services, #projects, #capabilities, #contact)
+- [x] **SHELL-05**: Root `layout.tsx` với metadata default (title template, description, OG image, robots, viewport)
 
 ### Landing Sections
 
