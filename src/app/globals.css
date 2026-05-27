@@ -57,3 +57,28 @@ body {
 section[id] {
   scroll-margin-top: 4.5rem;
 }
+
+/* ------------------------------------------------------------------ */
+/* PartnersMarquee — SEC-02 / D-06..D-10.                             */
+/* CSS-only horizontal scroll. Uses transform: translateX (PITFALLS   */
+/* #12) so the GPU can composite without paint/layout work. The track */
+/* contains duplicated content so the loop is seamless: translating   */
+/* from 0 to -50% lands the second copy where the first copy began.   */
+/* Reduced-motion guard pauses the animation per WCAG 2.3.3 / D-09.   */
+/* ------------------------------------------------------------------ */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: inline-flex;
+  gap: 2rem;
+  white-space: nowrap;
+  will-change: transform;
+  animation: marquee 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
