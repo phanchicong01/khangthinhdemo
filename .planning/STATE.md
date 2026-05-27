@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to execute
-stopped_at: Completed 03-01-above-fold-showcase-PLAN.md
-last_updated: "2026-05-27T17:08:24.173Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 03-02-stats-close-compose-PLAN.md
+last_updated: "2026-05-27T17:14:35.455Z"
 progress:
   total_phases: 6
-  completed_phases: 2
+  completed_phases: 3
   total_plans: 6
-  completed_plans: 5
+  completed_plans: 6
 ---
 
 # Project State
@@ -51,6 +51,7 @@ Plan: 2 of 2
 | Phase 02 P01 | 3min | 3 tasks | 8 files |
 | Phase 02 P02 | 5min | 1 tasks | 1 files |
 | Phase 03 P01 | 3min | 3 tasks | 5 files |
+| Phase 03 P02 | 3min | 3 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -77,6 +78,10 @@ Recent decisions affecting current work:
 - [Phase 03]: Phase 03: Project years 2024/2025 in Projects.tsx are BEST-GUESS per CONTEXT D-16 — user must confirm before Phase 4 lib/projects.ts extraction
 - [Phase 03]: Phase 03: Server-component-by-default for sections — marquee animation pure CSS @keyframes translateX with prefers-reduced-motion guard, no client component added
 - [Phase 03]: Phase 03: Project icon picks Construction/GitBranch/Anchor/Home; color-block alternation P1=burgundy, P2=espresso, P3=espresso, P4=burgundy (no adjacent same color in 2-col grid)
+- [Phase 03]: Phase 03: Cơ giới capability icon = Truck (D-23 candidate choice); reinforces fleet-mobility cue + matches Services VLXD icon
+- [Phase 03]: Phase 03: 'Giờ làm việc' omitted from Contact (D-31 Claude's Discretion declined — no confirmed business hours commitment)
+- [Phase 03]: Phase 03: #nang-luc lives on a wrapping <section> in page.tsx around BigStats + Capabilities — neither child carries an id
+- [Phase 03]: Phase 03: Background alternation finalized — bone/espresso/bone-dark/bone/bone-dark/bone/espresso/bone-dark; no two adjacent espresso bands
 
 ### Pending Todos
 
@@ -88,6 +93,6 @@ None yet. Pre-Phase-1 lock checklist resolved in initialization (font, deploy, d
 
 ## Session Continuity
 
-Last session: 2026-05-27T17:08:16.085Z
-Stopped at: Completed 03-01-above-fold-showcase-PLAN.md
+Last session: 2026-05-27T17:14:35.453Z
+Stopped at: Completed 03-02-stats-close-compose-PLAN.md
 Resume file: None

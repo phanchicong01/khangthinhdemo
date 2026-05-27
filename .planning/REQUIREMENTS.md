@@ -31,10 +31,10 @@ Requirements for initial release. Each maps to roadmap phases.
 - [x] **SEC-02**: `PartnersMarquee` — text scroll vô tận (CSS-only, no JS) hiển thị "BINH ĐOÀN 12 · TRƯỜNG SƠN · BỘ QUỐC PHÒNG · …"
 - [x] **SEC-03**: `Services` — 3 cards: Cung ứng VLXD (Cát-Đá-San lấp), Xây dựng dân dụng, Vận chuyển đường thủy với icon lucide-react
 - [x] **SEC-04**: `Projects` — 4 dự án tiêu biểu showcase (Cao tốc Cái Nước, Cầu Cửa Lớn, Hòn Khoai, Nhà phố) với CTA "Xem tất cả → /du-an"
-- [ ] **SEC-05**: `BigStats` — số liệu nổi bật (tải trọng tàu 700-3,900 tấn, số dự án, năm thành lập, đối tác)
-- [ ] **SEC-06**: `Capabilities` — chi tiết năng lực (đội tàu, cơ giới, đội xây lắp) với layout grid
-- [ ] **SEC-07**: `CtaQuote` — full-width banner "Yêu cầu báo giá" với nền espresso đậm + CTA prominent
-- [ ] **SEC-08**: `Contact` — info công ty (địa chỉ, MST, email) + 3 button CTA (tel/zalo/mailto) với icon
+- [x] **SEC-05**: `BigStats` — số liệu nổi bật (tải trọng tàu 700-3,900 tấn, số dự án, năm thành lập, đối tác)
+- [x] **SEC-06**: `Capabilities` — chi tiết năng lực (đội tàu, cơ giới, đội xây lắp) với layout grid
+- [x] **SEC-07**: `CtaQuote` — full-width banner "Yêu cầu báo giá" với nền espresso đậm + CTA prominent
+- [x] **SEC-08**: `Contact` — info công ty (địa chỉ, MST, email) + 3 button CTA (tel/zalo/mailto) với icon
 
 ### Projects List Page
 
