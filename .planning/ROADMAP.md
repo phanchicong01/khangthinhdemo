@@ -16,7 +16,7 @@
 ## Phases
 
 - [ ] **Phase 1: Foundation Lock-In** — Static-export config, design tokens, fonts (Vietnamese diacritics), `lib/site.ts`, skeleton cleanup, "hello world" deploy
-- [ ] **Phase 2: Layout Shell** — Sticky Nav, Footer (legal info), FloatingZalo button; real-device CTA smoke test
+- [x] **Phase 2: Layout Shell** — Sticky Nav, Footer (legal info), FloatingZalo button; real-device CTA smoke test
 - [ ] **Phase 3: Landing Sections** — 8 sections (Hero → PartnersMarquee → Services → Projects → BigStats → Capabilities → CtaQuote → Contact) composed in `app/page.tsx`
 - [ ] **Phase 4: Projects Data + `/du-an` List** — Typed `lib/projects.ts` + `/du-an` route consuming same source of truth
 - [ ] **Phase 5: SEO + Schema + Polish** — sitemap.ts, robots.ts, JSON-LD `GeneralContractor`, static OG image, favicon, 404 page
@@ -69,7 +69,7 @@
 
 **Plans**: 2 plans (Wave 1 + Wave 2 — sequential; smoke test depends on shell)
 - [x] 02-01-shell-components-PLAN.md — Nav + Footer + FloatingZalo + layout wiring + anchor placeholders (Wave 1, SHELL-01..05)
-- [ ] 02-02-real-device-smoke-test-PLAN.md — iOS Safari + Android Chrome CTA + smooth-scroll verification (Wave 2, SHELL-03, SHELL-04)
+- [x] 02-02-real-device-smoke-test-PLAN.md — iOS Safari + Android Chrome CTA + smooth-scroll verification (Wave 2, SHELL-03, SHELL-04)
 
 **Risk callouts** (from PITFALLS.md):
 - Pitfall #7: broken `tel:`/Zalo CTAs — use `tel:+84921985599` (E.164, no spaces) and `https://zalo.me/0921985599` (HTTPS), never `zalo://`

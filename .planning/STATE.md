@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Ready to execute
-stopped_at: Completed 02-01-shell-components-PLAN.md
-last_updated: "2026-05-27T02:05:33.310Z"
+status: Phase complete — ready for verification
+stopped_at: Completed 02-02-real-device-smoke-test-PLAN.md (Phase 2 complete)
+last_updated: "2026-05-27T11:00:10.547Z"
 progress:
   total_phases: 6
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 4
-  completed_plans: 3
+  completed_plans: 4
 ---
 
 # Project State
@@ -49,6 +49,7 @@ Plan: 2 of 2
 | Phase 01 P01 | 3 | 4 tasks | 5 files |
 | Phase 01 P02 | 20min | 5 tasks | 9 files |
 | Phase 02 P01 | 3min | 3 tasks | 8 files |
+| Phase 02 P02 | 5min | 1 tasks | 1 files |
 
 ## Accumulated Context
 
@@ -71,6 +72,7 @@ Recent decisions affecting current work:
 - [Phase 02]: Picked useState for Nav mobile menu over CSS-only peer-checked for ESC + auto-close + accurate aria-expanded a11y
 - [Phase 02]: Placed shell components under src/components/layout/ (nested) anticipating Phase 3 src/components/sections/
 - [Phase 02]: Preserved Phase 1 sentinel content inside #nang-luc <details> debug card; will be removed in Phase 3
+- [Phase 02]: Phase 02: Real-device CTA smoke test PASSED on iOS Safari + Android Chrome — tel/zalo.me/mailto handlers all fire, smooth-scroll lands below sticky nav, FloatingZalo FAB visibility OK. Phase 2 complete.
 
 ### Pending Todos
 
@@ -82,6 +84,6 @@ None yet. Pre-Phase-1 lock checklist resolved in initialization (font, deploy, d
 
 ## Session Continuity
 
-Last session: 2026-05-27T02:05:33.307Z
-Stopped at: Completed 02-01-shell-components-PLAN.md
+Last session: 2026-05-27T11:00:10.545Z
+Stopped at: Completed 02-02-real-device-smoke-test-PLAN.md (Phase 2 complete)
 Resume file: None
