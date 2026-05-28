@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 5 plans ready — ready for execution
-stopped_at: Completed 05-01 + 05-02 PLAN.md (PASS plan-checker)
-last_updated: "2026-05-28T14:45:00.000Z"
+status: Phase 5 in progress — 05-01 complete, 05-02 next
+stopped_at: Completed 05-01-seo-infrastructure-PLAN.md
+last_updated: "2026-05-28T08:30:00.000Z"
 progress:
   total_phases: 6
   completed_phases: 4
-  total_plans: 7
-  completed_plans: 7
+  total_plans: 9
+  completed_plans: 8
 ---
 
 # Project State
@@ -23,8 +23,8 @@ See: .planning/PROJECT.md (updated 2026-05-26)
 
 ## Current Position
 
-Phase: 04 (projects-data-du-an-list) — EXECUTING
-Plan: 1 of 1
+Phase: 05 (seo-schema-polish) — EXECUTING
+Plan: 2 of 2 (05-01 complete; 05-02 next)
 
 ## Performance Metrics
 
@@ -53,6 +53,7 @@ Plan: 1 of 1
 | Phase 03 P01 | 3min | 3 tasks | 5 files |
 | Phase 03 P02 | 3min | 3 tasks | 5 files |
 | Phase 04 P01 | 2min | 4 tasks | 3 files |
+| Phase 05 P01 | 5min | 3 tasks | 2 files |
 
 ## Accumulated Context
 
@@ -86,6 +87,8 @@ Recent decisions affecting current work:
 - [Phase 04]: Phase 04: lib/projects.ts is single source of truth — both landing Projects.tsx and /du-an/page.tsx import 'projects' directly; getFeaturedProjects() exported but unused (future-proofing for >4 projects)
 - [Phase 04]: Phase 04: /du-an back link uses static Next Link href='/#du-an' (NOT router.back) — works on direct visit/refresh per SC4
 - [Phase 04]: Phase 04: /du-an cards use <h2> (under page <h1>) + aria-label='Dự án {title} – {client}' on <article> for semantic + screen-reader context
+- [Phase 05]: Phase 05 P01: Next 15.5.18 requires `export const dynamic = 'force-static'` on sitemap.ts + robots.ts route handlers under output:'export' (plan/research assumed default static-opt — build aborted; added directive)
+- [Phase 05]: Phase 05 P01: robots.txt emits `User-Agent:` (capital-A) from Next 15; RFC 9309 §2.2.1 makes field-name match case-insensitive, so compliant — gate uses `grep -qi`
 
 ### Pending Todos
 
@@ -97,6 +100,6 @@ None yet. Pre-Phase-1 lock checklist resolved in initialization (font, deploy, d
 
 ## Session Continuity
 
-Last session: 2026-05-28T02:06:44.576Z
-Stopped at: Completed 04-01-projects-data-list-PLAN.md
+Last session: 2026-05-28T08:30:00.000Z
+Stopped at: Completed 05-01-seo-infrastructure-PLAN.md
 Resume file: None
