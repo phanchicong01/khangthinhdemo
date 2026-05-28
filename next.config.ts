@@ -6,10 +6,12 @@
 // - ISR / `revalidate`
 // - rewrites / redirects / headers config
 // - default next/image loader (must keep images.unoptimized: true)
+import path from "path";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "export",
+  outputFileTracingRoot: path.join(__dirname),
   trailingSlash: true,
   images: {
     unoptimized: true,

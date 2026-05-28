@@ -53,7 +53,7 @@ export default function Footer() {
               <li key={a.href}>
                 <a
                   href={a.href}
-                  className="inline-block min-h-[44px] py-2 hover:text-terracotta"
+                  className="inline-flex items-center min-w-[44px] min-h-[44px] py-2 hover:text-terracotta"
                 >
                   {a.label}
                 </a>

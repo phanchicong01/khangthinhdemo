@@ -37,10 +37,11 @@ export default function Nav() {
     <header className="sticky top-0 z-40 bg-bone/95 backdrop-blur border-b border-bone-dark">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
         {/* Wordmark — per D-01 (text-only, font-black uppercase burgundy) */}
+        {/* min-h-[44px] ensures WCAG 2.5.5 tap target on mobile (Plan 06-01 Task 5 fix) */}
         <a
           href="#"
           aria-label={`${company.shortName} — Trang chủ`}
-          className="font-black uppercase tracking-wide text-burgundy text-lg md:text-xl whitespace-nowrap"
+          className="inline-flex items-center min-h-[44px] font-black uppercase tracking-wide text-burgundy text-lg md:text-xl whitespace-nowrap"
         >
           {company.shortName}
         </a>
@@ -51,7 +52,7 @@ export default function Nav() {
             <a
               key={a.href}
               href={a.href}
-              className="inline-flex items-center min-h-[44px] px-3 text-sm font-medium text-espresso hover:text-burgundy"
+              className="inline-flex items-center justify-center min-w-[44px] min-h-[44px] px-3 text-sm font-medium text-espresso hover:text-burgundy"
             >
               {a.label}
             </a>
