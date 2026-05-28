@@ -18,10 +18,15 @@ export const company = {
   tagline: 'Hợp tác cùng phát triển',
   founded: 2025,
 
-  // Phone — display vs tel: href vs zalo URL building block
+  // Phone — primary (also Zalo)
   phoneDisplay: '082 6553 599',
   phoneE164: '+84826553599', // tel:+84826553599 — E.164, no spaces, no parens
   phoneRaw: '0826553599',    // bare digits, used to build zalo.me URL
+
+  // Phone — secondary (additional contact line, no Zalo)
+  phoneSecondaryDisplay: '0333 77 8888',
+  phoneSecondaryE164: '+84333778888',
+  phoneSecondaryRaw: '0333778888',
 
   email: 'khangthinhinv2025@gmail.com',
 
@@ -46,6 +51,7 @@ export const company = {
 
 // Helpers (prevent typos at call sites; consumed by Footer, Contact, FloatingZalo)
 export const telHref = (): string => `tel:${company.phoneE164}`
+export const telSecondaryHref = (): string => `tel:${company.phoneSecondaryE164}`
 export const mailtoHref = (): string => `mailto:${company.email}`
 export const zaloHref = (): string => company.zaloUrl
 

@@ -3,7 +3,7 @@
 // Per D-22: All company data MUST import from @/lib/site.
 import Link from 'next/link'
 import { Phone, Mail, MessageCircle, MapPin } from 'lucide-react'
-import { company, telHref, mailtoHref, zaloHref } from '@/lib/site'
+import { company, telHref, telSecondaryHref, mailtoHref, zaloHref } from '@/lib/site'
 
 const navAnchors = [
   { href: '#dich-vu',  label: 'Dịch vụ' },
@@ -81,6 +81,15 @@ export default function Footer() {
               >
                 <Phone className="w-4 h-4" aria-hidden="true" />
                 <span>{company.phoneDisplay}</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={telSecondaryHref()}
+                className="inline-flex items-center gap-2 min-h-[44px] py-2 hover:text-terracotta"
+              >
+                <Phone className="w-4 h-4" aria-hidden="true" />
+                <span>{company.phoneSecondaryDisplay}</span>
               </a>
             </li>
             <li>

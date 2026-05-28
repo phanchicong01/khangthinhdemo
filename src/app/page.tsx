@@ -45,7 +45,7 @@ export default function HomePage() {
         name: company.legalName,
         image: `${siteUrl}/og.png`,
         url: siteUrl,
-        telephone: company.phoneE164,
+        telephone: [company.phoneE164, company.phoneSecondaryE164],
         email: company.email,
         address: {
           '@type': 'PostalAddress',

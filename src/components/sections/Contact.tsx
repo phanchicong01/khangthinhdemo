@@ -3,7 +3,7 @@
 // All CTA hrefs flow through @/lib/site helpers — never hardcoded.
 // Plain-text email is rendered next to the mailto button per PITFALLS #7.
 import { Phone, MessageCircle, Mail } from 'lucide-react'
-import { company, telHref, zaloHref, mailtoHref } from '@/lib/site'
+import { company, telHref, telSecondaryHref, zaloHref, mailtoHref } from '@/lib/site'
 
 export default function Contact() {
   return (
@@ -50,6 +50,13 @@ export default function Contact() {
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               <span>Gọi {company.phoneDisplay}</span>
+            </a>
+            <a
+              href={telSecondaryHref()}
+              className="inline-flex items-center justify-center gap-2 min-h-[44px] w-full bg-burgundy text-bone px-6 py-4 rounded-sm text-base font-bold uppercase tracking-wide hover:bg-burgundy-dark transition-colors"
+            >
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              <span>Gọi {company.phoneSecondaryDisplay}</span>
             </a>
             <a
               href={zaloHref()}
