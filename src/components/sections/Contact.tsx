@@ -49,7 +49,7 @@ export default function Contact() {
               className="inline-flex items-center justify-center gap-2 min-h-[44px] w-full bg-burgundy text-bone px-6 py-4 rounded-sm text-base font-bold uppercase tracking-wide hover:bg-burgundy-dark transition-colors"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
-              <span>Gọi 092 198 55 99</span>
+              <span>Gọi {company.phoneDisplay}</span>
             </a>
             <a
               href={zaloHref()}

@@ -62,7 +62,7 @@
 **Success Criteria** (what must be TRUE):
   1. Nav is sticky at top on scroll, shows logo + 5 anchor links + "Báo giá" CTA + visible hotline on desktop, collapses to a working mobile menu under 768px
   2. Footer displays full legal info (MST 1102 107 064, ĐDPL Tô Thị Bích Ngọc, address A3-02 KDC Long Phú, Bến Lức, Tây Ninh, phone, email) sourced from `lib/site.ts`
-  3. FloatingZalo button is fixed bottom-right on every page, ≥56×56px touch target, deep-links to `https://zalo.me/0921985599`, has `aria-label="Chat Zalo với Khang Thịnh"`
+  3. FloatingZalo button is fixed bottom-right on every page, ≥56×56px touch target, deep-links to `https://zalo.me/0826553599`, has `aria-label="Chat Zalo với Khang Thịnh"`
   4. Clicking nav anchors (`#services`, `#projects`, `#capabilities`, `#contact`) smooth-scrolls to placeholder section anchors with `scroll-margin-top` accounting for the sticky nav (no content hidden under nav)
   5. Real-device smoke test passes: on iOS Safari and Android Chrome, tapping the Nav hotline opens the dialer, tapping FloatingZalo opens Zalo app/web, mailto link composes an email
   6. Root `layout.tsx` declares default metadata (title template, description, OG image stub, `metadataBase`, viewport, `lang="vi"`) and renders Nav/Footer/FloatingZalo around `{children}`
@@ -72,7 +72,7 @@
 - [x] 02-02-real-device-smoke-test-PLAN.md — iOS Safari + Android Chrome CTA + smooth-scroll verification (Wave 2, SHELL-03, SHELL-04)
 
 **Risk callouts** (from PITFALLS.md):
-- Pitfall #7: broken `tel:`/Zalo CTAs — use `tel:+84921985599` (E.164, no spaces) and `https://zalo.me/0921985599` (HTTPS), never `zalo://`
+- Pitfall #7: broken `tel:`/Zalo CTAs — use `tel:+84826553599` (E.164, no spaces) and `https://zalo.me/0826553599` (HTTPS), never `zalo://`
 - UX Pitfall: sticky nav hiding anchor targets — apply `scroll-margin-top: 4.5rem` to `section[id]`
 - UX Pitfall: tap targets <44×44px — enforce on all Nav buttons and FloatingZalo
 
@@ -90,7 +90,7 @@
 
 **Success Criteria** (what must be TRUE):
   1. Visiting `/` shows the 8 sections in order: Hero → PartnersMarquee → Services → Projects → BigStats → Capabilities → CtaQuote → Contact, each separated by intentional vertical rhythm and using the Burgundy/Bone palette
-  2. Hero displays a large uppercase Vietnamese headline (Be Vietnam Pro 900) + sub-text + 2 CTAs (Gọi 092 198 55 99 / Báo giá) with industrial CSS-pattern background — both CTAs are working tel/anchor links
+  2. Hero displays a large uppercase Vietnamese headline (Be Vietnam Pro 900) + sub-text + 2 CTAs (Gọi 082 6553 599 / Báo giá) with industrial CSS-pattern background — both CTAs are working tel/anchor links
   3. PartnersMarquee scrolls infinitely with CSS-only `@keyframes` (no JS), displays text "BINH ĐOÀN 12 · TRƯỜNG SƠN · BỘ QUỐC PHÒNG · …", and pauses for `prefers-reduced-motion: reduce`
   4. Services renders 3 cards (Cung ứng VLXD / Xây dựng dân dụng / Vận chuyển đường thủy) each with a lucide-react icon
   5. Projects section showcases 4 named projects (Cao tốc Cái Nước-Đất Mũi, Cầu Cửa Lớn, Đường ra Hòn Khoai, Nhà phố tiêu biểu) with named clients visible (Bộ Quốc phòng / Binh đoàn 12 / Trường Sơn front-and-center) and a "Xem tất cả → /du-an" link
@@ -145,7 +145,7 @@
   1. `app/sitemap.ts` generates a valid XML sitemap with 2 entries (`/`, `/du-an`) using absolute URLs from `NEXT_PUBLIC_SITE_URL` — verified by viewing `/out/sitemap.xml` after build
   2. `app/robots.ts` generates a valid `robots.txt` that allows all crawlers and references the sitemap URL — verified by viewing `/out/robots.txt`
   3. Pasting the deployed URL into Zalo / Facebook Messenger / Slack shows the correct OG card (1200×630 PNG from `/public/og-image.png` with logo + tagline, title and description from `layout.tsx` metadata)
-  4. The landing page emits a `GeneralContractor` JSON-LD `<script type="application/ld+json">` containing exact NAP (name "Công ty TNHH Khang Thịnh Investment", `telephone: "+84921985599"`, full PostalAddress with Bến Lức/Tây Ninh, `taxID: "1102107064"`, `areaServed`, services) — passes [Rich Results Test](https://search.google.com/test/rich-results) with no errors
+  4. The landing page emits a `GeneralContractor` JSON-LD `<script type="application/ld+json">` containing exact NAP (name "Công ty TNHH Khang Thịnh Investment", `telephone: "+84826553599"`, full PostalAddress with Bến Lức/Tây Ninh, `taxID: "1102107064"`, `areaServed`, services) — passes [Rich Results Test](https://search.google.com/test/rich-results) with no errors
   5. Browser tabs show the Khang Thịnh favicon (not the default Next.js triangle) across 16×16, 32×32, and apple-touch-icon 180×180 sizes
   6. Visiting any unknown route (e.g. `/khong-ton-tai`) renders a styled custom 404 (`app/not-found.tsx`) with branding + a clear link back to `/`
 
@@ -171,7 +171,7 @@
   1. Manual responsive verification at 375px / 768px / 1280px shows no overflow, broken layout, or unreadable text on any page
   2. Lighthouse mobile (throttled) reports Performance ≥ 90, SEO ≥ 95, Accessibility ≥ 90, Best Practices ≥ 95 on both `/` and `/du-an`
   3. Every interactive element (nav links, CTA buttons, FloatingZalo, Footer links) has a tap target ≥ 44×44px, and body text is ≥ 16px throughout
-  4. Real-device CTA smoke test: on iOS Safari, Android Chrome, Facebook in-app browser, and Zalo in-app browser — `tel:`, `mailto:`, and `https://zalo.me/0921985599` links all open the correct app/handler
+  4. Real-device CTA smoke test: on iOS Safari, Android Chrome, Facebook in-app browser, and Zalo in-app browser — `tel:`, `mailto:`, and `https://zalo.me/0826553599` links all open the correct app/handler
   5. `npm run build` + `npx serve out/` produces zero console errors and zero broken asset 404s on either page
   6. The production build deployed to Cloudflare Pages is publicly reachable, served over HTTPS with a valid certificate, and Cloudflare Web Analytics records pageviews (production-only script — not in dev builds)
   7. `README.md` documents the deploy workflow: required env vars (`NEXT_PUBLIC_SITE_URL`), build command (`npm run build`), publish directory (`out/`), and Cloudflare Pages configuration steps
@@ -214,7 +214,7 @@ These decisions per SUMMARY.md should be confirmed before Phase 1 work begins (h
 - [ ] Font loading mechanism: `next/font/google` (per FND-04)
 - [ ] Production domain: real `.vn` domain OR firm placeholder + `NEXT_PUBLIC_SITE_URL` env-var contract documented
 - [ ] Analytics: Cloudflare Web Analytics
-- [ ] CTA convention: `tel:+84921985599` for href, `092 198 55 99` for display, `https://zalo.me/0921985599` for Zalo
+- [ ] CTA convention: `tel:+84826553599` for href, `082 6553 599` for display, `https://zalo.me/0826553599` for Zalo
 - [ ] JSON-LD `@type`: `GeneralContractor` (resolve in Phase 5 research)
 - [ ] ESLint rule banning `"use server"`, `cookies()`, `headers()` imports
 

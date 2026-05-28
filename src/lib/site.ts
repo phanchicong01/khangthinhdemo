@@ -19,15 +19,15 @@ export const company = {
   founded: 2025,
 
   // Phone — display vs tel: href vs zalo URL building block
-  phoneDisplay: '092 198 55 99',
-  phoneE164: '+84921985599', // tel:+84921985599 — E.164, no spaces, no parens
-  phoneRaw: '0921985599',    // bare digits, used to build zalo.me URL
+  phoneDisplay: '082 6553 599',
+  phoneE164: '+84826553599', // tel:+84826553599 — E.164, no spaces, no parens
+  phoneRaw: '0826553599',    // bare digits, used to build zalo.me URL
 
   email: 'khangthinhinv2025@gmail.com',
 
   // Zalo deep link — HTTPS (NEVER zalo://).
   // Works on iOS Universal Link + Android intent fallback.
-  zaloUrl: 'https://zalo.me/0921985599',
+  zaloUrl: 'https://zalo.me/0826553599',
 
   // Legal (MST + ĐDPL)
   taxId: '1102107064',

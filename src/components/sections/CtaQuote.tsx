@@ -2,7 +2,7 @@
 // Server component. NO anchor id per D-29 (Nav "Báo giá" CTA targets #lien-he).
 // Banner is a conversion strip between Capabilities and Contact.
 import { Phone } from 'lucide-react'
-import { telHref } from '@/lib/site'
+import { company, telHref } from '@/lib/site'
 
 export default function CtaQuote() {
   return (
@@ -23,7 +23,7 @@ export default function CtaQuote() {
             className="inline-flex items-center justify-center gap-2 min-h-[44px] bg-burgundy text-bone px-8 py-4 rounded-sm text-base md:text-lg font-bold uppercase tracking-wide hover:bg-burgundy-dark transition-colors"
           >
             <Phone className="w-5 h-5" aria-hidden="true" />
-            <span>Gọi 092 198 55 99</span>
+            <span>Gọi {company.phoneDisplay}</span>
           </a>
         </div>
       </div>

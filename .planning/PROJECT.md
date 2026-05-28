@@ -65,7 +65,7 @@ Website giới thiệu công ty TNHH Khang Thịnh Investment — một doanh ng
 
 **Company facts (từ CLAUDE.md):**
 - MST: 1102 107 064, ĐDPL: Tô Thị Bích Ngọc
-- SĐT: 092 198 55 99, Email: khangthinhinv2025@gmail.com
+- SĐT: 082 6553 599, Email: khangthinhinv2025@gmail.com
 - Địa chỉ: A3-02 KDC Long Phú, xã Bến Lức, tỉnh Tây Ninh
 - Phương châm: "Hợp tác cùng phát triển"
 - 4 dự án tiêu biểu: Cao tốc Cái Nước-Đất Mũi, Cầu Cửa Lớn, Đường ra Hòn Khoai, Nhà phố
