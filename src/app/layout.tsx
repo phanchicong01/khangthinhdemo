@@ -7,6 +7,7 @@ import { siteUrl } from '@/lib/site'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import FloatingZalo from '@/components/layout/FloatingZalo'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -42,6 +43,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Footer />
         <FloatingZalo />
+        <Analytics />
       </body>
     </html>
   )
