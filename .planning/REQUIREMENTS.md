@@ -38,9 +38,9 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Projects List Page
 
-- [ ] **PROJ-01**: Data dự án sống trong `lib/projects.ts` với type Project (slug, title, client, location, year, scope, summary)
-- [ ] **PROJ-02**: Trang `/du-an` render danh sách projects với card layout, anchor về landing sections khi click "Quay lại"
-- [ ] **PROJ-03**: `/du-an` page có metadata riêng (title, description) khác với root layout
+- [x] **PROJ-01**: Data dự án sống trong `lib/projects.ts` với type Project (slug, title, client, location, year, scope, summary)
+- [x] **PROJ-02**: Trang `/du-an` render danh sách projects với card layout, anchor về landing sections khi click "Quay lại"
+- [x] **PROJ-03**: `/du-an` page có metadata riêng (title, description) khác với root layout
 
 ### SEO
 

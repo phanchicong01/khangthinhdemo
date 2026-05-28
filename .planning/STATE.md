@@ -3,13 +3,13 @@ gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
 status: Phase complete — ready for verification
-stopped_at: Completed 03-02-stats-close-compose-PLAN.md
-last_updated: "2026-05-27T17:14:35.455Z"
+stopped_at: Completed 04-01-projects-data-list-PLAN.md
+last_updated: "2026-05-28T02:06:44.581Z"
 progress:
   total_phases: 6
-  completed_phases: 3
-  total_plans: 6
-  completed_plans: 6
+  completed_phases: 4
+  total_plans: 7
+  completed_plans: 7
 ---
 
 # Project State
@@ -19,12 +19,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-05-26)
 
 **Core value:** Khách hàng tiềm năng — sau khi xem website — tin tưởng đủ để gọi/Zalo liên hệ tư vấn
-**Current focus:** Phase 03 — landing-sections
+**Current focus:** Phase 04 — projects-data-du-an-list
 
 ## Current Position
 
-Phase: 03 (landing-sections) — EXECUTING
-Plan: 2 of 2
+Phase: 04 (projects-data-du-an-list) — EXECUTING
+Plan: 1 of 1
 
 ## Performance Metrics
 
@@ -52,6 +52,7 @@ Plan: 2 of 2
 | Phase 02 P02 | 5min | 1 tasks | 1 files |
 | Phase 03 P01 | 3min | 3 tasks | 5 files |
 | Phase 03 P02 | 3min | 3 tasks | 5 files |
+| Phase 04 P01 | 2min | 4 tasks | 3 files |
 
 ## Accumulated Context
 
@@ -82,6 +83,9 @@ Recent decisions affecting current work:
 - [Phase 03]: Phase 03: 'Giờ làm việc' omitted from Contact (D-31 Claude's Discretion declined — no confirmed business hours commitment)
 - [Phase 03]: Phase 03: #nang-luc lives on a wrapping <section> in page.tsx around BigStats + Capabilities — neither child carries an id
 - [Phase 03]: Phase 03: Background alternation finalized — bone/espresso/bone-dark/bone/bone-dark/bone/espresso/bone-dark; no two adjacent espresso bands
+- [Phase 04]: Phase 04: lib/projects.ts is single source of truth — both landing Projects.tsx and /du-an/page.tsx import 'projects' directly; getFeaturedProjects() exported but unused (future-proofing for >4 projects)
+- [Phase 04]: Phase 04: /du-an back link uses static Next Link href='/#du-an' (NOT router.back) — works on direct visit/refresh per SC4
+- [Phase 04]: Phase 04: /du-an cards use <h2> (under page <h1>) + aria-label='Dự án {title} – {client}' on <article> for semantic + screen-reader context
 
 ### Pending Todos
 
@@ -93,6 +97,6 @@ None yet. Pre-Phase-1 lock checklist resolved in initialization (font, deploy, d
 
 ## Session Continuity
 
-Last session: 2026-05-27T17:14:35.453Z
-Stopped at: Completed 03-02-stats-close-compose-PLAN.md
+Last session: 2026-05-28T02:06:44.576Z
+Stopped at: Completed 04-01-projects-data-list-PLAN.md
 Resume file: None

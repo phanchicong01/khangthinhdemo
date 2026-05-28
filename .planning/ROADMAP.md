@@ -124,7 +124,8 @@
   3. `/du-an` page declares its own metadata (title "Dự án tiêu biểu | Khang Thịnh Investment", description, canonical) distinct from the root layout's defaults
   4. A "Quay lại trang chủ" or back link on `/du-an` returns the user to landing (anchored back at `#projects` if appropriate) and works after a fresh page load (not only via in-app navigation)
 
-**Plans**: TBD (estimated 1-2 plans for coarse granularity)
+**Plans**: 1 plan (Wave 1 — single autonomous plan, 4 tasks)
+- [x] 04-01-projects-data-list-PLAN.md — Create lib/projects.ts (typed Project + 4 entries + helper), refactor landing Projects.tsx to import from it, rewrite /du-an page.tsx with Burgundy/Bone palette + own metadata + back link, build-verify both routes in out/ (Wave 1, PROJ-01..03)
 
 **Risk callouts** (from PITFALLS.md):
 - Pitfall #11: anchor-only-SEO weakness — `/du-an` provides a second indexable URL; ensure rich `h2`/`h3` structure on landing also
