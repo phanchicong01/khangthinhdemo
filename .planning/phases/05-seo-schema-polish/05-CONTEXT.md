@@ -58,7 +58,7 @@ Final SEO surfaces — sitemap, robots.txt, OG image, favicon, JSON-LD structure
     - `name`: `company.legalName`
     - `image`: `${siteUrl}/og.png` (build-output OG image — reused)
     - `url`: `siteUrl`
-    - `telephone`: `company.phoneE164` → "+84921985599" (E.164, per Pitfall #6)
+    - `telephone`: `company.phoneE164` → "+84826553599" (E.164, per Pitfall #6)
     - `email`: `company.email`
     - `address`: PostalAddress object built from `company.address` (streetAddress, addressLocality "Bến Lức", addressRegion "Tây Ninh", addressCountry "VN")
     - `taxID`: `company.taxId`
@@ -69,7 +69,7 @@ Final SEO surfaces — sitemap, robots.txt, OG image, favicon, JSON-LD structure
   - `founder` (PII consideration — `legalRep` not embedded in JSON-LD)
   - `openingHours` / `contactPoint.hoursAvailable` (B2B, no fixed retail hours)
   - Social `sameAs` URLs (no Facebook/LinkedIn/Zalo OA profile to link yet)
-- **D-06:** Phone format in JSON-LD **MUST** be `+84921985599` (E.164, no spaces, no parentheses). Do NOT use `phoneDisplay` ("092 198 55 99"). Matches Pitfall #6 from PITFALLS.md and Phase 1 D-10.
+- **D-06:** Phone format in JSON-LD **MUST** be `+84826553599` (E.164, no spaces, no parentheses). Do NOT use `phoneDisplay` ("082 6553 599"). Matches Pitfall #6 from PITFALLS.md and Phase 1 D-10.
 
 ### 2. OG image (SEO-03)
 
@@ -194,7 +194,7 @@ Final SEO surfaces — sitemap, robots.txt, OG image, favicon, JSON-LD structure
 - `/du-an` already has `alternates: { canonical: '/du-an' }` (page.tsx line 15) — Phase 5 sitemap simply lists the route, no metadata change needed
 
 **Pitfalls watched in Phase 5:**
-- Pitfall #6: phone in JSON-LD MUST be `+84921985599` (E.164) — locked D-06
+- Pitfall #6: phone in JSON-LD MUST be `+84826553599` (E.164) — locked D-06
 - Pitfall #10: every URL in sitemap/OG must come from `siteUrl` env var — locked D-25, D-12
 - Pitfall #14: default 404 — fixed via D-19..D-23
 - Pitfall #15: metadataBase warning — verified D-32
