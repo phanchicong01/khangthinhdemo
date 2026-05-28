@@ -2,14 +2,14 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 5 in progress — 05-01 complete, 05-02 next
-stopped_at: Completed 05-01-seo-infrastructure-PLAN.md
-last_updated: "2026-05-28T08:30:00.000Z"
+status: Phase 5 complete — Phase 6 next (Audit + Launch)
+stopped_at: Completed 05-02-schema-brand-polish-PLAN.md — Phase 5 done
+last_updated: "2026-05-28T08:35:00.000Z"
 progress:
   total_phases: 6
-  completed_phases: 4
+  completed_phases: 5
   total_plans: 9
-  completed_plans: 8
+  completed_plans: 9
 ---
 
 # Project State
@@ -23,8 +23,8 @@ See: .planning/PROJECT.md (updated 2026-05-26)
 
 ## Current Position
 
-Phase: 05 (seo-schema-polish) — EXECUTING
-Plan: 2 of 2 (05-01 complete; 05-02 next)
+Phase: 05 (seo-schema-polish) — COMPLETE
+Next: Phase 06 (audit-launch)
 
 ## Performance Metrics
 
@@ -54,6 +54,7 @@ Plan: 2 of 2 (05-01 complete; 05-02 next)
 | Phase 03 P02 | 3min | 3 tasks | 5 files |
 | Phase 04 P01 | 2min | 4 tasks | 3 files |
 | Phase 05 P01 | 5min | 3 tasks | 2 files |
+| Phase 05 P02 | 18min | 6 tasks | 5 files |
 
 ## Accumulated Context
 
@@ -89,6 +90,10 @@ Recent decisions affecting current work:
 - [Phase 04]: Phase 04: /du-an cards use <h2> (under page <h1>) + aria-label='Dự án {title} – {client}' on <article> for semantic + screen-reader context
 - [Phase 05]: Phase 05 P01: Next 15.5.18 requires `export const dynamic = 'force-static'` on sitemap.ts + robots.ts route handlers under output:'export' (plan/research assumed default static-opt — build aborted; added directive)
 - [Phase 05]: Phase 05 P01: robots.txt emits `User-Agent:` (capital-A) from Next 15; RFC 9309 §2.2.1 makes field-name match case-insensitive, so compliant — gate uses `grep -qi`
+- [Phase 05]: Phase 05 P02: Satori (next/og engine) parses TTF/OTF only — Google Fonts CSS2 must be fetched with bare 'Mozilla/5.0' UA to get .ttf URL (a full Chrome UA returns .woff2 which fails Satori with 'Unsupported OpenType signature wOF2')
+- [Phase 05]: Phase 05 P02: JSON-LD `image` field kept as `${siteUrl}/og.png` even though Next 15 emits OG image at extensionless `/opengraph-image` URL — JSON-LD `image` is a rich-results hint; canonical share URL is the Next-injected `og:image` meta tag (acceptable divergence)
+- [Phase 05]: Phase 05 P02: Vietnamese diacritic visual gate (D-13b) PASSED on first build — Be Vietnam Pro `subset=vietnamese` renders Ị/ứ/â/ự/ậ/ể/ợ/á/ù correctly; Option A/B fallback not triggered
+- [Phase 05]: Phase 05 P02: `export const dynamic = 'force-static'` applied proactively to all 3 ImageResponse routes (opengraph-image, icon, apple-icon) — extends Phase 5 P1 learning to image conventions
 
 ### Pending Todos
 
@@ -100,6 +105,7 @@ None yet. Pre-Phase-1 lock checklist resolved in initialization (font, deploy, d
 
 ## Session Continuity
 
-Last session: 2026-05-28T08:30:00.000Z
-Stopped at: Completed 05-01-seo-infrastructure-PLAN.md
+Last session: 2026-05-28T08:35:00.000Z
+Stopped at: Completed 05-02-schema-brand-polish-PLAN.md — Phase 5 done
 Resume file: None
+Next action: Begin Phase 6 (audit-launch) — Lighthouse, Rich Results, real-device CTA tests, Cloudflare Pages deploy

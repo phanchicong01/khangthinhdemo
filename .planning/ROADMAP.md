@@ -19,7 +19,7 @@
 - [x] **Phase 2: Layout Shell** — Sticky Nav, Footer (legal info), FloatingZalo button; real-device CTA smoke test
 - [ ] **Phase 3: Landing Sections** — 8 sections (Hero → PartnersMarquee → Services → Projects → BigStats → Capabilities → CtaQuote → Contact) composed in `app/page.tsx`
 - [ ] **Phase 4: Projects Data + `/du-an` List** — Typed `lib/projects.ts` + `/du-an` route consuming same source of truth
-- [ ] **Phase 5: SEO + Schema + Polish** — sitemap.ts, robots.ts, JSON-LD `GeneralContractor`, static OG image, favicon, 404 page
+- [x] **Phase 5: SEO + Schema + Polish** — sitemap.ts, robots.ts, JSON-LD `GeneralContractor`, OG image (ImageResponse), favicon, 404 page
 - [ ] **Phase 6: Audit + Launch** — Lighthouse audit, real-device CTA test, Cloudflare Pages deploy, Web Analytics, README
 
 ## Phase Details
@@ -149,13 +149,15 @@
   5. Browser tabs show the Khang Thịnh favicon (not the default Next.js triangle) across 16×16, 32×32, and apple-touch-icon 180×180 sizes
   6. Visiting any unknown route (e.g. `/khong-ton-tai`) renders a styled custom 404 (`app/not-found.tsx`) with branding + a clear link back to `/`
 
-**Plans**: TBD (estimated 2 plans for coarse granularity — SEO infra + JSON-LD/OG/404 polish)
+**Plans**: 2 plans (Wave 1 then Wave 2 — sequential)
+- [x] 05-01-seo-infrastructure.md — sitemap.ts + robots.ts via Next 15 file conventions (Wave 1, SEO-01..02) — commit 880d095
+- [x] 05-02-schema-brand-polish.md — JSON-LD @graph on landing + OG image (ImageResponse) + 32/180 favicons + branded 404 (Wave 2, SEO-03..06) — commit 0ec8679
 
 **Risk callouts** (from PITFALLS.md):
-- Pitfall #6: missing/wrong LocalBusiness JSON-LD — use `+84` phone format, mirror NAP exactly across UI, JSON-LD, and (future) Google Business Profile
-- Pitfall #10: sitemap/OG under wrong domain — every URL must come from `NEXT_PUBLIC_SITE_URL`; never hardcode the placeholder
-- Pitfall #14: default 404 — ship `app/not-found.tsx`
-- Pitfall #15: `metadataBase` already set in Phase 1 — verify no warning during build
+- Pitfall #6: missing/wrong LocalBusiness JSON-LD — use `+84` phone format, mirror NAP exactly across UI, JSON-LD, and (future) Google Business Profile — MITIGATED (telephone via company.phoneE164)
+- Pitfall #10: sitemap/OG under wrong domain — every URL must come from `NEXT_PUBLIC_SITE_URL`; never hardcode the placeholder — MITIGATED (all URLs via siteUrl)
+- Pitfall #14: default 404 — ship `app/not-found.tsx` — MITIGATED (file shipped, branded 404 emitted)
+- Pitfall #15: `metadataBase` already set in Phase 1 — verify no warning during build — MITIGATED (Phase 5 build clean, no warning)
 
 **Research needed**: YES — 1-hour validation of JSON-LD `@type` choice (`GeneralContractor` vs `LocalBusiness` vs `@graph` of `Organization` + `LocalBusiness`) against Rich Results Test for Google VN local search benefits.
 

@@ -44,12 +44,12 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### SEO
 
-- [ ] **SEO-01**: `app/sitemap.ts` generate sitemap với 2 routes (`/`, `/du-an`) sử dụng `NEXT_PUBLIC_SITE_URL`
-- [ ] **SEO-02**: `app/robots.ts` generate robots.txt với sitemap reference
-- [ ] **SEO-03**: Static OG image `/public/og-image.png` (1200x630) với logo + tagline tiếng Việt
-- [ ] **SEO-04**: JSON-LD `GeneralContractor` schema embedded trong landing page (Organization name, address, telephone, areaServed, services)
-- [ ] **SEO-05**: Favicon (multi-size: 16x16, 32x32, apple-touch-icon 180x180) trong `/public`
-- [ ] **SEO-06**: Custom 404 page (`app/not-found.tsx`) với link về trang chủ
+- [x] **SEO-01**: `app/sitemap.ts` generate sitemap với 2 routes (`/`, `/du-an`) sử dụng `NEXT_PUBLIC_SITE_URL`
+- [x] **SEO-02**: `app/robots.ts` generate robots.txt với sitemap reference
+- [x] **SEO-03**: Static OG image (1200x630) với logo + tagline tiếng Việt — emitted by `app/opengraph-image.tsx` via ImageResponse + Be Vietnam Pro vietnamese subset
+- [x] **SEO-04**: JSON-LD `@graph` (Organization + GeneralContractor) embedded trong landing page — telephone E.164 +84826553599, taxID 1102107064, 3 areaServed (Tây Ninh/Long An/Cà Mau), 3 OfferCatalog services
+- [x] **SEO-05**: Favicon (32x32 via `icon.tsx`, apple-touch-icon 180x180 via `apple-icon.tsx`) — KT monogram on Burgundy
+- [x] **SEO-06**: Custom 404 page (`app/not-found.tsx`) với 2 CTAs (Về trang chủ + Gọi tư vấn), Nav/Footer/FloatingZalo auto-wrap, robots noindex
 
 ### Quality
 
