@@ -2,14 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-status: Phase 5 complete — Phase 6 next (Audit + Launch)
-stopped_at: Completed 05-02-schema-brand-polish-PLAN.md — Phase 5 done
-last_updated: "2026-05-28T08:35:00.000Z"
+status: v1.0 COMPLETE — deployed to Vercel — ready for v2.0 (Full Corporate Website)
+stopped_at: Plan 06-02 closed externally (Vercel auto-deploy from origin/main)
+last_updated: "2026-05-30T00:00:00.000Z"
+live_url: "https://khangthinhdemo-git-main-phanchicong01s-projects.vercel.app/"
 progress:
   total_phases: 6
-  completed_phases: 5
-  total_plans: 9
-  completed_plans: 9
+  completed_phases: 6
+  total_plans: 10
+  completed_plans: 10
 ---
 
 # Project State
