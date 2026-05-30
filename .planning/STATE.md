@@ -2,18 +2,19 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: full-corporate-website
-status: v2.0 initialized — ready for autonomous execution (Phase 07 research first)
-stopped_at: PROJECT.md + REQUIREMENTS.md + ROADMAP.md v2.0 written
+status: Phase 07 research COMPLETE — stack locked, render mode → Vercel SSR. Phase 08 next (architecture).
+stopped_at: RESEARCH.md written; render-mode decision approved (static export → SSR)
 last_updated: "2026-05-30T00:00:00.000Z"
 live_url: "https://khangthinhdemo-git-main-phanchicong01s-projects.vercel.app/"
 v1_archived: true
+render_mode: vercel-ssr
 progress:
   total_phases: 12
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 0
   completed_plans: 0
-next_phase: 07
-next_phase_name: re-research-stack-v2
+next_phase: 08
+next_phase_name: architecture-refactor
 ---
 
 # Project State

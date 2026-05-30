@@ -128,30 +128,48 @@ v2.0 thêm: **Depth (chiều sâu nội dung)** + **Polish (cảm giác premium)
 - TypeScript 5.9 strict
 - Be Vietnam Pro (variable font)
 - Lucide React icons
-- Static export `output: 'export'`
+- ~~Static export `output: 'export'`~~ → **REVOKED — switched to Vercel SSR (2026-05-30)**
 - Burgundy/Bone palette
+
+### ⚠️ MAJOR DECISION 2026-05-30 — Render mode: Static export → Vercel SSR
+
+v1.0 used `output: 'export'` (static HTML). v2.0 **removes it** to deploy as a normal Next.js app on Vercel.
+
+**Why:** Site is already on Vercel, which natively supports SSR/middleware/API routes/ISR/image optimization. Static export was self-imposed handcuffs that broke i18n (needs middleware) and forced an external Cloudflare Worker for the form.
+
+**Unlocked by this switch:**
+- `middleware.ts` → next-intl locale routing works the standard way
+- `app/api/quote/route.ts` → form backend is a Next API route (NO separate Cloudflare Worker needed)
+- `next/image` optimization ON (was `unoptimized: true`)
+- ISR / streaming / dynamic rendering available if ever needed
+
+**Cost:** Slight vendor coupling to Vercel (acceptable — already there). If we ever leave Vercel, can re-add static export or use another Node host.
 
 ### New for v2.0
 
 | Library | Purpose | Why |
 |---------|---------|-----|
 | **`motion` v12** | Premium animations | Đã loại trong v1.0 vì "marketing site overkill" — v2.0 cần. ~50KB chấp nhận được cho corporate site |
-| **`@vercel/analytics`** | Web Vitals + page tracking | Đã defer từ v1.0 |
-| **Cloudflare Workers** | Form backend | Free, no brand, full control. Email Routing cho inbox notification |
-| **`@next/mdx`** + `gray-matter` + `reading-time` | Blog system | MDX cho `/tin-tuc/*` |
-| **`next-intl` v3** | i18n VI/EN | Type-safe, App Router native |
+| **`@vercel/analytics`** | Web Vitals + page tracking | Đã có sẵn trong package.json (^2.0.1) — chỉ cần wire vào layout |
+| **`next-intl` v3/v4** | i18n VI/EN | Type-safe, App Router native, dùng middleware (SSR) |
 | **`next-themes`** | Dark mode | Standard library, SSR-safe |
-| **`pagefind`** | Static search | Build-time index, ~30KB runtime, không cần backend |
+| **`react-hook-form`** + **`zod`** + **`@hookform/resolvers`** | Quote form | Client validation; submit tới `/api/quote` route |
+| **`resend`** *(or nodemailer)* | Form email gửi inbox | Trong API route — gửi email tới khangthinhinv2025@gmail.com |
+| **`@next/mdx`** + `gray-matter` + `reading-time` | Blog system | MDX cho `/tin-tuc/*` |
+| **`pagefind`** | Static search | Build-time index, ~30KB runtime client |
 | **`@formkit/auto-animate`** *(maybe)* | Tiny list animations | Drop-in `useAutoAnimate()` hook |
 
 ### Architecture Changes
 
+- Remove `output: 'export'` + `images.unoptimized` from next.config.ts
+- Add `src/middleware.ts` cho i18n locale detection
 - Add `src/app/[locale]/` segment cho i18n
+- Add `src/app/api/quote/route.ts` — form POST handler (replaces Cloudflare Worker)
 - Add `src/content/blog/` cho MDX posts
 - Add `src/lib/services.ts`, `src/lib/capabilities.ts`, `src/lib/team.ts`, `src/lib/faqs.ts` — single source of truth pattern mở rộng
 - Add `src/components/nav/` (Navbar with dropdown, MobileMenu, MegaMenu)
 - Add `src/components/animations/` (Reveal, Parallax, CountUp, MagneticButton)
-- Add `src/components/forms/QuoteForm.tsx` + Worker endpoint
+- Add `src/components/forms/QuoteForm.tsx`
 - Add `src/messages/vi.json`, `src/messages/en.json` cho i18n
 
 ## Domain & Deployment
@@ -169,16 +187,18 @@ v2.0 thêm: **Depth (chiều sâu nội dung)** + **Polish (cảm giác premium)
 
 ## Key Decisions Locked (v2.0)
 
-1. **Multi-page architecture** (12+ routes) thay vì single-page
+1. **Multi-page architecture** (14 routes) thay vì single-page
 2. **Motion v12** cho animations (revoked v1.0 "no-Motion" decision)
-3. **Cloudflare Workers** cho form backend (revoked v1.0 "no form" decision)
-4. **i18n EN fallback** (revoked v1.0 "VI only" decision)
-5. **Dark mode toggle** (mới, không có ở v1.0)
-6. **MDX blog** (revoked v1.0 "no blog" decision)
-7. **Custom domain** vẫn pending — dùng placeholder `khangthinhinv.vn`
-8. **Vercel** locked (đã deploy, không đổi sang Cloudflare Pages nữa)
-9. **Vercel Analytics** thay Cloudflare Web Analytics (cùng platform)
-10. **Content giả định** em viết, anh edit sau
+3. **Vercel SSR** (revoked v1.0 `output: 'export'`) — unlocks middleware + API routes + image optimization
+4. **Form backend = Next API route** `app/api/quote/route.ts` (revoked earlier Cloudflare Worker plan — SSR makes Worker unnecessary)
+5. **i18n EN fallback** với next-intl + middleware (revoked v1.0 "VI only" decision)
+6. **Dark mode toggle** (mới, không có ở v1.0)
+7. **MDX blog** (revoked v1.0 "no blog" decision)
+8. **Custom domain** vẫn pending — dùng placeholder `khangthinhinv.vn`
+9. **Vercel** locked (đã deploy, không đổi sang Cloudflare Pages nữa)
+10. **Vercel Analytics** thay Cloudflare Web Analytics (cùng platform)
+11. **next/image optimization ON** (revoked v1.0 `unoptimized: true`)
+12. **Content giả định** em viết, anh edit sau
 
 ## Workflow Notes (carry over)
 

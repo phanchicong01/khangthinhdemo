@@ -130,22 +130,22 @@ Each phase below is a self-contained chunk that:
 **Wave:** sequential within phase
 **Requirements covered:** ROUTE-08/09, CONTENT-04
 
-### Phase 14 — Contact page + form backend (`/lien-he` + Worker)
+### Phase 14 — Contact page + form backend (`/lien-he` + API route)
 
-**Goal:** Full contact page with working form submission.
+**Goal:** Full contact page with working form submission. **(SSR mode → Next API route, NOT Cloudflare Worker.)**
 
 **Plans:**
-- 14-01 Cloudflare Worker scaffold (`workers/quote-form/`) — separate deploy
-- 14-02 Worker: validate + email + rate limit + honeypot
-- 14-03 `/lien-he` page Hero + intro
-- 14-04 Quote form component (react-hook-form + Zod)
-- 14-05 Form success/error states
-- 14-06 Google Maps embed + giờ làm việc + 4 kênh contact
-- 14-07 Worker deploy + smoke test
+- 14-01 Shared Zod schema (`lib/schemas/quote.ts`) + API route `app/api/quote/route.ts` (validate + honeypot + rate limit + Resend email)
+- 14-02 `/lien-he` page Hero + intro
+- 14-03 Quote form component (react-hook-form + Zod)
+- 14-04 Form success/error states + graceful fallback when RESEND_API_KEY missing
+- 14-05 Google Maps embed + giờ làm việc + 4 kênh contact
+- 14-06 End-to-end smoke test (form → API → email)
 
-**Deliverable:** `/lien-he` live, form submission works end-to-end (test email)
-**Wave:** Worker (14-01/02/07) parallel to UI (14-03/04/05/06)
+**Deliverable:** `/lien-he` live, form submission works end-to-end (test email via Resend)
+**Wave:** API (14-01) → UI (14-02/03/04/05) parallel → test (14-06)
 **Requirements covered:** ROUTE-10/14, FORM-01..09, CONTENT-05
+**Env dependency:** `RESEND_API_KEY` (user sets in Vercel; graceful fallback until then)
 
 ### Phase 15 — Blog system (`/tin-tuc` + MDX)
 
