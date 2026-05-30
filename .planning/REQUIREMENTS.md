@@ -1,143 +1,218 @@
-# Requirements: Khang Thịnh Investment Website
+# Requirements — Milestone v2.0
 
-**Defined:** 2026-05-26
-**Core Value:** Khách hàng tiềm năng — sau khi xem website — tin tưởng đủ để gọi/Zalo liên hệ tư vấn
+> v1.0 requirements archived in `REQUIREMENTS-v1.0.md`. This document defines net-new requirements for v2.0 (Full Corporate Website).
 
-## v1 Requirements
+## Functional Requirements
 
-Requirements for initial release. Each maps to roadmap phases.
+### ROUTE — Page Inventory
 
-### Foundation
+| ID | Route | Description | Priority |
+|----|-------|-------------|----------|
+| ROUTE-01 | `/` | Landing premium (upgraded from v1.0) | P0 |
+| ROUTE-02 | `/ve-chung-toi` | About company page | P0 |
+| ROUTE-03 | `/dich-vu` | Services hub | P0 |
+| ROUTE-04 | `/dich-vu/cung-ung-vlxd` | VLXD detail page | P1 |
+| ROUTE-05 | `/dich-vu/xay-dung` | Construction detail page | P1 |
+| ROUTE-06 | `/dich-vu/van-chuyen-duong-thuy` | Waterway shipping detail page | P1 |
+| ROUTE-07 | `/nang-luc` | Capabilities deep page | P1 |
+| ROUTE-08 | `/du-an` | Projects list (upgraded) | P0 |
+| ROUTE-09 | `/du-an/[slug]` | Project detail dynamic page | P1 |
+| ROUTE-10 | `/lien-he` | Contact page with form | P0 |
+| ROUTE-11 | `/tin-tuc` | Blog list (MDX) | P2 |
+| ROUTE-12 | `/tin-tuc/[slug]` | Blog post detail | P2 |
+| ROUTE-13 | `/404` | Custom 404 page | P1 |
+| ROUTE-14 | `/api/quote` (Cloudflare Worker — external) | Form submission endpoint | P0 |
 
-- [x] **FND-01**: `next.config.ts` configured for static export (`output: 'export'`, `images.unoptimized: true`, `trailingSlash: true`)
-- [x] **FND-02**: TypeScript strict mode enabled, build passes `npm run build` without errors
-- [x] **FND-03**: Tailwind CSS v4 design tokens defined in `globals.css` via `@theme` directive (Burgundy/Bone palette)
-- [x] **FND-04**: Be Vietnam Pro font (weights 400/500/600/700/800/900) loaded via `next/font/google` with explicit `subsets: ['vietnamese', 'latin']`
-- [x] **FND-05**: Site URL configurable via `NEXT_PUBLIC_SITE_URL` env var (default placeholder `https://khangthinhinv.vn`)
-- [x] **FND-06**: Company facts (phone, Zalo URL, email, MST, address) live in `lib/site.ts` as single source of truth
-- [x] **FND-07**: Old skeleton folders removed (`src/app/dich-vu/`, `src/app/lien-he/`, `src/components/Header.tsx`)
+### NAV — Navigation
 
-### Layout Shell
+| ID | Requirement | Priority |
+|----|------------|----------|
+| NAV-01 | Multi-level navigation với dropdown cho `/dich-vu/*` | P0 |
+| NAV-02 | Mobile hamburger menu với accordion sub-items | P0 |
+| NAV-03 | Sticky header với scroll behavior (compress khi scroll xuống) | P1 |
+| NAV-04 | Active route highlight (cả parent + child) | P0 |
+| NAV-05 | Breadcrumbs trên mọi deep page (level 2+) | P1 |
+| NAV-06 | Language switcher (VI/EN) trên header | P1 |
+| NAV-07 | Dark mode toggle trên header | P2 |
 
-- [x] **SHELL-01**: Sticky `Nav` component với logo + 5 anchor links + CTA "Báo giá", visible hotline trên desktop, mobile menu collapse
-- [x] **SHELL-02**: `Footer` component với company legal info (MST, address, email, phone) + copyright
-- [x] **SHELL-03**: `FloatingZalo` button fixed bottom-right, hiển thị trên cả mobile + desktop, deep link `https://zalo.me/0826553599`
-- [x] **SHELL-04**: Smooth scroll cho anchor links (#services, #projects, #capabilities, #contact)
-- [x] **SHELL-05**: Root `layout.tsx` với metadata default (title template, description, OG image, robots, viewport)
+### FORM — Quote Form (`/lien-he`)
 
-### Landing Sections
+| ID | Requirement | Priority |
+|----|------------|----------|
+| FORM-01 | Form fields: tên, SĐT, email, dịch vụ quan tâm (dropdown), nhu cầu (textarea) | P0 |
+| FORM-02 | Client-side validation với react-hook-form + Zod | P0 |
+| FORM-03 | Cloudflare Worker endpoint nhận POST, validate, gửi email | P0 |
+| FORM-04 | Honeypot field anti-spam | P0 |
+| FORM-05 | Rate limit (5 submission / IP / giờ) trên Worker | P1 |
+| FORM-06 | Success state UI với CTA tiếp theo (Zalo / gọi ngay) | P0 |
+| FORM-07 | Error state UI với retry + fallback (email/Zalo direct) | P0 |
+| FORM-08 | Email template HTML đẹp gửi về `khangthinhinv2025@gmail.com` | P1 |
+| FORM-09 | Reply-to email tự động cho khách (confirmation) | P2 |
 
-- [x] **SEC-01**: `Hero` section — headline lớn (Be Vietnam Pro 900 uppercase), sub-text, 2 CTA (Gọi/Báo giá), industrial CSS pattern background
-- [x] **SEC-02**: `PartnersMarquee` — text scroll vô tận (CSS-only, no JS) hiển thị "BINH ĐOÀN 12 · TRƯỜNG SƠN · BỘ QUỐC PHÒNG · …"
-- [x] **SEC-03**: `Services` — 3 cards: Cung ứng VLXD (Cát-Đá-San lấp), Xây dựng dân dụng, Vận chuyển đường thủy với icon lucide-react
-- [x] **SEC-04**: `Projects` — 4 dự án tiêu biểu showcase (Cao tốc Cái Nước, Cầu Cửa Lớn, Hòn Khoai, Nhà phố) với CTA "Xem tất cả → /du-an"
-- [x] **SEC-05**: `BigStats` — số liệu nổi bật (tải trọng tàu 700-3,900 tấn, số dự án, năm thành lập, đối tác)
-- [x] **SEC-06**: `Capabilities` — chi tiết năng lực (đội tàu, cơ giới, đội xây lắp) với layout grid
-- [x] **SEC-07**: `CtaQuote` — full-width banner "Yêu cầu báo giá" với nền espresso đậm + CTA prominent
-- [x] **SEC-08**: `Contact` — info công ty (địa chỉ, MST, email) + 3 button CTA (tel/zalo/mailto) với icon
+### ANIM — Animations (Motion v12)
 
-### Projects List Page
+| ID | Requirement | Priority |
+|----|------------|----------|
+| ANIM-01 | Page transition (fade/slide giữa routes) | P1 |
+| ANIM-02 | Scroll reveal cho mọi section (whileInView, once: true) | P0 |
+| ANIM-03 | Count-up animation cho BigStats numbers | P1 |
+| ANIM-04 | Parallax hero (background di chuyển chậm hơn foreground) | P1 |
+| ANIM-05 | Smooth marquee cho partners | P0 |
+| ANIM-06 | Hover lift cho cards (y: -4, shadow grow) | P0 |
+| ANIM-07 | Magnetic button cho CTA chính | P2 |
+| ANIM-08 | Logo SVG animation lúc load (path draw) | P2 |
+| ANIM-09 | Loading skeleton cho async/heavy components | P1 |
+| ANIM-10 | Respect `prefers-reduced-motion` — skip mọi animation | P0 (a11y) |
 
-- [x] **PROJ-01**: Data dự án sống trong `lib/projects.ts` với type Project (slug, title, client, location, year, scope, summary)
-- [x] **PROJ-02**: Trang `/du-an` render danh sách projects với card layout, anchor về landing sections khi click "Quay lại"
-- [x] **PROJ-03**: `/du-an` page có metadata riêng (title, description) khác với root layout
+### I18N — Internationalization
 
-### SEO
+| ID | Requirement | Priority |
+|----|------------|----------|
+| I18N-01 | Setup next-intl v3 với locales `vi` (default) + `en` | P1 |
+| I18N-02 | Route segment `[locale]` với middleware | P1 |
+| I18N-03 | Translation files `src/messages/vi.json` + `en.json` cho tất cả static text | P1 |
+| I18N-04 | Language switcher giữ context route hiện tại | P1 |
+| I18N-05 | hreflang tags trong metadata | P1 |
+| I18N-06 | Translated metadata + OG cho mỗi route × locale | P2 |
 
-- [x] **SEO-01**: `app/sitemap.ts` generate sitemap với 2 routes (`/`, `/du-an`) sử dụng `NEXT_PUBLIC_SITE_URL`
-- [x] **SEO-02**: `app/robots.ts` generate robots.txt với sitemap reference
-- [x] **SEO-03**: Static OG image (1200x630) với logo + tagline tiếng Việt — emitted by `app/opengraph-image.tsx` via ImageResponse + Be Vietnam Pro vietnamese subset
-- [x] **SEO-04**: JSON-LD `@graph` (Organization + GeneralContractor) embedded trong landing page — telephone E.164 +84826553599, taxID 1102107064, 3 areaServed (Tây Ninh/Long An/Cà Mau), 3 OfferCatalog services
-- [x] **SEO-05**: Favicon (32x32 via `icon.tsx`, apple-touch-icon 180x180 via `apple-icon.tsx`) — KT monogram on Burgundy
-- [x] **SEO-06**: Custom 404 page (`app/not-found.tsx`) với 2 CTAs (Về trang chủ + Gọi tư vấn), Nav/Footer/FloatingZalo auto-wrap, robots noindex
+### MDX — Blog System
 
-### Quality
+| ID | Requirement | Priority |
+|----|------------|----------|
+| MDX-01 | Setup `@next/mdx` với rehype/remark plugins | P2 |
+| MDX-02 | Frontmatter schema: title, slug, date, excerpt, tags, author, cover | P2 |
+| MDX-03 | Blog list page `/tin-tuc` với pagination | P2 |
+| MDX-04 | Blog detail page `/tin-tuc/[slug]` với reading time | P2 |
+| MDX-05 | 3–5 bài viết mẫu (giả định) trên topic: VLXD, xây dựng, dự án Quốc phòng | P2 |
+| MDX-06 | Tag filter trên list page | P3 |
+| MDX-07 | RSS feed `/rss.xml` | P3 |
+| MDX-08 | Related posts ở cuối mỗi bài | P3 |
 
-- [ ] **QA-01**: Responsive build tốt ở 375px / 768px / 1280px (manual test browser DevTools)
-- [ ] **QA-02**: Lighthouse mobile: Performance ≥ 90, SEO ≥ 95, Accessibility ≥ 90, Best Practices ≥ 95
-- [ ] **QA-03**: Tap target ≥ 44×44px cho mọi CTA, link nav, button
-- [ ] **QA-04**: Body text ≥ 16px (audience skews older male, dễ đọc trên mobile)
-- [ ] **QA-05**: `tel:`, `mailto:`, `zalo.me/` links hoạt động đúng (manual test trên real device hoặc browser)
-- [ ] **QA-06**: Không có console errors khi `npm run build` + `npx serve out/`
+### DARK — Dark Mode
 
-### Deployment
+| ID | Requirement | Priority |
+|----|------------|----------|
+| DARK-01 | next-themes setup với system preference default | P2 |
+| DARK-02 | Dark palette: invert Burgundy/Bone (Bone-dark bg + Burgundy accents) | P2 |
+| DARK-03 | All sections + cards + buttons có dark variant | P2 |
+| DARK-04 | Toggle button có animation icon (sun/moon) | P2 |
+| DARK-05 | Persist preference trong localStorage | P2 |
 
-- [ ] **DEPLOY-01**: Build artifact `/out/` generate đúng, deploy được lên Cloudflare Pages
-- [ ] **DEPLOY-02**: Cloudflare Web Analytics script tích hợp vào `layout.tsx` (production-only)
-- [ ] **DEPLOY-03**: README.md updated với deploy instructions (Cloudflare Pages + env vars)
+### SEARCH — Local Search
 
-## v2 Requirements
+| ID | Requirement | Priority |
+|----|------------|----------|
+| SEARCH-01 | Pagefind build-time index include all pages + blog | P3 |
+| SEARCH-02 | Search modal (Cmd/Ctrl+K) | P3 |
+| SEARCH-03 | Result highlights + excerpts | P3 |
 
-Deferred to future release. Tracked but not in current roadmap.
+### PWA — Progressive Web App
 
-### Project Detail Pages
+| ID | Requirement | Priority |
+|----|------------|----------|
+| PWA-01 | Manifest.webmanifest với icons + theme color | P3 |
+| PWA-02 | Service worker cho offline-ready (cache shell) | P3 |
+| PWA-03 | Install prompt UI | P3 |
 
-- **PROJ-DETAIL-01**: Trang `/du-an/[slug]` với content chi tiết (ảnh, mô tả dài, role công ty, timeline, quy mô)
-- **PROJ-DETAIL-02**: `generateStaticParams()` cho mỗi project
-- **PROJ-DETAIL-03**: Image gallery component cho project photos
+### CONTENT — Per-Page Content Depth
 
-### Local SEO
+| ID | Requirement | Priority |
+|----|------------|----------|
+| CONTENT-01 | `/ve-chung-toi`: lịch sử 2 paragraphs + sứ mệnh + sơ đồ tổ chức + giấy phép placeholder | P0 |
+| CONTENT-02 | `/dich-vu/*`: mỗi dịch vụ — overview + 4–6 sub-services + quy trình + FAQ 5–7 câu + related projects | P0 |
+| CONTENT-03 | `/nang-luc`: 3 tabs (Đội tàu, Cơ giới, Đội xây lắp) — mỗi tab có 8+ bullet + thiết bị placeholder | P1 |
+| CONTENT-04 | `/du-an/[slug]`: mỗi project — hero ảnh placeholder + khối lượng + thời gian + vai trò + ảnh gallery placeholder | P1 |
+| CONTENT-05 | `/lien-he`: form + Google Maps embed + giờ làm việc + 4 kênh contact | P0 |
+| CONTENT-06 | 5–7 FAQ chung trên footer/about | P1 |
+| CONTENT-07 | Cam kết chất lượng section (4 cards: chất lượng, đúng hẹn, an toàn, minh bạch) | P0 |
+| CONTENT-08 | Quy trình làm việc 5 bước (Tiếp nhận → Khảo sát → Báo giá → Thi công → Nghiệm thu) | P0 |
+| CONTENT-09 | Testimonial section (3–5 quotes giả định từ khách hàng) | P1 |
 
-- **LSEO-01**: Google Business Profile registration (Tây Ninh)
-- **LSEO-02**: Google Maps embed trong Contact section (lazy-loaded)
-- **LSEO-03**: Google Search Console setup + sitemap submission
+### TRUST — Trust Signals
 
-### Content & Conversion
+| ID | Requirement | Priority |
+|----|------------|----------|
+| TRUST-01 | Giấy phép kinh doanh placeholder (image card + MST) | P0 |
+| TRUST-02 | Số liệu năng lực honest hơn (bỏ "3 đối tác Quốc phòng" misleading) | P0 |
+| TRUST-03 | Tagline "Hợp tác cùng phát triển" visible ở Hero | P0 |
+| TRUST-04 | Schema.org LocalBusiness mở rộng (areaServed, openingHours, serviceCatalog) | P1 |
+| TRUST-05 | FAQPage schema cho mỗi service page | P2 |
+| TRUST-06 | BreadcrumbList schema cho deep pages | P2 |
 
-- **CONT-V2-01**: Real project photos thay CSS pattern placeholders
-- **CONT-V2-02**: Testimonials section (chỉ khi có named clients đồng ý)
-- **CONT-V2-03**: Vietnamese-native copy reviewer pass
+### SEO — Search Engine Optimization
 
-### Polish
+| ID | Requirement | Priority |
+|----|------------|----------|
+| SEO-01 | Mỗi route có metadata riêng (title, description, OG) | P0 |
+| SEO-02 | Mỗi blog post có metadata + article schema | P2 |
+| SEO-03 | Sitemap.xml include tất cả 12+ routes + blog posts + locales | P1 |
+| SEO-04 | Robots.txt cho phép crawling (carry v1.0) | P0 |
+| SEO-05 | Canonical URLs với custom domain placeholder | P1 |
+| SEO-06 | hreflang cho VI/EN versions | P1 |
 
-- **POLISH-01**: Subtle scroll-triggered animations (Motion One nếu cần count-up cho BigStats)
-- **POLISH-02**: Dark mode toggle (palette tokens đã CSS-variable-based, swap dễ)
-- **POLISH-03**: Per-page OG images (unique cho `/du-an`)
+### ANALYTICS
 
-## Out of Scope
+| ID | Requirement | Priority |
+|----|------------|----------|
+| ANALYTICS-01 | Vercel Analytics tích hợp (`@vercel/analytics`) | P1 |
+| ANALYTICS-02 | Web Vitals tracking | P1 |
+| ANALYTICS-03 | Custom events: form submit, CTA click, Zalo click, phone click | P2 |
 
-Explicitly excluded. Documented to prevent scope creep.
+## Non-Functional Requirements
 
-| Feature | Reason |
-|---------|--------|
-| Contact form (email submission) | B2B VLXD/xây dựng chuộng gọi điện trực tiếp; form ít dùng + spam magnet |
-| Public price list (bảng giá VLXD) | Giá biến động theo thị trường/khối lượng/điểm giao; show giá cố định gây sai lệch |
-| `/du-an/[slug]` detail pages | Chưa có content chi tiết đầy đủ (ảnh, mô tả); → v2 |
-| i18n / Tiếng Anh | Khách hàng mục tiêu hoàn toàn nội địa Việt Nam |
-| CMS / admin panel | Content thay đổi không thường xuyên; edit trực tiếp code đủ |
-| Logo image của đối tác (Binh đoàn 12, Trường Sơn) | Risk bản quyền; dùng text marquee thay |
-| Bebas Neue display font | Không có Vietnamese diacritics → break headings |
-| JetBrains Mono font | Chỉ dùng vài chỗ; system mono stack đủ |
-| GitHub Pages deployment | ToS cấm "primarily commercial" sites |
-| Framer Motion / heavy animation libs | Marketing site không cần; ~34-50KB bloat |
-| `next-sitemap` package | Next 15 built-in sitemap.ts đủ |
-| `ImageResponse` (Satori) dynamic OG | CSS subset hạn chế + Vietnamese diacritic fragile |
-| Hero video / hero slider | Lag mobile + audience không expect |
-| Cookie consent banner | Cloudflare Analytics cookieless → không cần consent |
-| Customer testimonials generic | "Anh Tuấn rất hài lòng" reads fake; named project clients mạnh hơn |
-| Newsletter signup | No content cadence để justify; spam magnet |
-| Blog / News section | Cần content commitment chưa có |
-| Live chat non-Zalo | VN users distrust generic widgets |
+### NFR — Performance
 
-## Traceability
+| ID | Requirement |
+|----|------------|
+| NFR-PERF-01 | Lighthouse Performance ≥ 85 mọi route (accept lower than v1.0 90 vì Motion v12) |
+| NFR-PERF-02 | LCP < 2.5s trên 4G simulation |
+| NFR-PERF-03 | INP < 200ms |
+| NFR-PERF-04 | CLS < 0.1 |
+| NFR-PERF-05 | Bundle JS first-load < 200KB (vs v1.0 ~110KB) |
 
-Which phases cover which requirements. Updated during roadmap creation.
+### NFR — Accessibility
 
-| Requirement | Phase | Status |
-|-------------|-------|--------|
-| FND-01..07 | Phase 1 | Pending |
-| SHELL-01..05 | Phase 2 | Pending |
-| SEC-01..08 | Phase 3 | Pending |
-| PROJ-01..03 | Phase 4 | Pending |
-| SEO-01..06 | Phase 5 | Pending |
-| QA-01..06 | Phase 6 | Pending |
-| DEPLOY-01..03 | Phase 6 | Pending |
+| ID | Requirement |
+|----|------------|
+| NFR-A11Y-01 | Lighthouse A11y ≥ 95 mọi route |
+| NFR-A11Y-02 | WCAG 2.1 AA color contrast |
+| NFR-A11Y-03 | Keyboard navigation đầy đủ + focus visible |
+| NFR-A11Y-04 | `prefers-reduced-motion` respect |
+| NFR-A11Y-05 | Semantic HTML + ARIA labels đúng |
+| NFR-A11Y-06 | Form errors announced cho screen readers |
 
-**Coverage:**
-- v1 requirements: 38 total
-- Mapped to phases: 38
-- Unmapped: 0 ✓
+### NFR — SEO
 
----
-*Requirements defined: 2026-05-26*
-*Last updated: 2026-05-26 after initial definition*
+| ID | Requirement |
+|----|------------|
+| NFR-SEO-01 | Lighthouse SEO ≥ 95 mọi route |
+| NFR-SEO-02 | Structured data valid (Schema.org validator) |
+
+### NFR — Quality
+
+| ID | Requirement |
+|----|------------|
+| NFR-Q-01 | TypeScript strict mode pass |
+| NFR-Q-02 | `npm run build` thành công |
+| NFR-Q-03 | ESLint không error |
+| NFR-Q-04 | Single source of truth pattern (lib/*) cho mọi data |
+| NFR-Q-05 | Component naming consistent với v1.0 |
+
+### NFR — Browser Support
+
+| ID | Requirement |
+|----|------------|
+| NFR-BROW-01 | Chrome / Safari / Firefox latest 2 versions |
+| NFR-BROW-02 | iOS Safari 16+, Android Chrome 100+ |
+| NFR-BROW-03 | Test thật trên iPhone + Android device khi launch |
+
+## Out of Scope (v2.0)
+
+- CMS / admin panel (v3.0)
+- E-commerce / payment
+- User accounts / login
+- Real-time chat widget (Zalo native đủ)
+- Video hosting (embed YouTube nếu cần)
+- Booking system
+- Multi-tenant
+- Server-rendered pages (giữ static export)

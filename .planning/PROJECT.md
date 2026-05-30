@@ -1,119 +1,190 @@
-# Khang Thịnh Investment — Website
+# Khang Thịnh Investment — Website (Milestone v2.0)
 
 ## What This Is
 
-Website giới thiệu công ty TNHH Khang Thịnh Investment — một doanh nghiệp mới thành lập (2025) hoạt động trong 3 lĩnh vực: cung ứng vật liệu xây dựng (cát/đá/san lấp), xây dựng dân dụng, và vận chuyển đường thủy. Website phục vụ đa đối tượng: chủ đầu tư/nhà thầu lớn (verify uy tín), chủ nhà cá nhân (tìm đơn vị xây nhà phố), doanh nghiệp mua VLXD số lượng lớn, và các bên có nhu cầu thuê vận chuyển đường thủy.
+Mở rộng website Khang Thịnh từ **landing 1 trang (v1.0)** thành **website doanh nghiệp đa trang đầy đủ (v2.0)** — đẳng cấp đối thủ lớn cùng ngành cung ứng VLXD + xây dựng + vận chuyển đường thủy.
 
-## Core Value
+v1.0 (đã live trên Vercel) là MVP tối giản. v2.0 đầu tư về **chiều sâu nội dung, hệ thống điều hướng, và polish visual** để website xài lâu dài 5–10 năm.
 
-**Khách hàng tiềm năng — sau khi xem website — tin tưởng đủ để gọi/Zalo liên hệ tư vấn.** Trust (qua portfolio dự án + đối tác Quốc phòng) + Conversion (CTA call/zalo/email rõ ràng) là hai mặt của cùng một mục tiêu.
+## v1.0 Status
 
-## Requirements
+- Live: `https://khangthinhdemo-git-main-phanchicong01s-projects.vercel.app/`
+- 6 phases complete (10 plans)
+- Stack locked: Next.js 15 + React 19 + Tailwind 4 + TypeScript 5.9 + Static export
+- Burgundy/Bone palette + Be Vietnam Pro
 
-### Validated
+## v2.0 Vision (Why)
 
-(None yet — ship to validate)
+User feedback 2026-05-29: "web hơi không được chi tiết, dở", "hiệu ứng cũng ko, bố trí thô sơ, không có tính lâu dài".
 
-### Active
+→ Reset target từ **"MVP landing"** sang **"Full Corporate Website"**.
 
-- [ ] Single-page landing với 8 sections industrial layout (Hero/Partners/Services/Projects/Stats/Capabilities/CTA-Quote/Contact)
-- [ ] Trang `/du-an` danh sách dự án (list view, không có detail page ở phase 1)
-- [ ] Palette Burgundy + Bone (light mode) thay tone đỏ-đen của Mẫu A gốc
-- [ ] 3 CTA liên hệ: tel/zalo/mailto + FloatingZalo button cố định
-- [ ] SEO foundation: metadata, OpenGraph (static PNG), sitemap.ts, robots.ts, JSON-LD `GeneralContractor`
-- [ ] Responsive: mobile 375px → desktop 1440px
-- [ ] Static export (`output: 'export'`) — deploy Cloudflare Pages
-- [ ] Type-safe (TypeScript strict) + build pass `npm run build`
-- [ ] Lighthouse: Performance ≥ 90, SEO ≥ 95, Accessibility ≥ 90
-- [ ] 1 font family (Be Vietnam Pro 400-900) với subset Vietnamese qua `next/font/google`
-- [ ] Site URL qua env var `NEXT_PUBLIC_SITE_URL`
-- [ ] Phone/Zalo/Email là single source of truth trong `lib/site.ts`
-- [ ] Cloudflare Web Analytics tích hợp
+## Core Value (carried over)
 
-### Out of Scope
+**Khách hàng tiềm năng — sau khi xem website — tin tưởng đủ để gọi/Zalo liên hệ tư vấn.** Trust + Conversion vẫn là 2 mặt cùng một mục tiêu.
 
-- **Contact form (mailto/Formspree)** — B2B ngành VLXD/xây dựng chuộng gọi điện trực tiếp; form ít dùng và dễ spam
-- **Bảng giá VLXD chi tiết** — Giá biến động theo thị trường/khối lượng/điểm giao; show giá cố định gây sai lệch + mất linh hoạt thương lượng
-- **Trang `/du-an/[slug]` chi tiết dự án** — Chưa có dữ liệu chi tiết đầy đủ (ảnh, mô tả, vai trò công ty); hoãn đến khi user cung cấp content
-- **i18n / tiếng Anh** — Khách hàng mục tiêu hoàn toàn nội địa Việt Nam
-- **CMS / admin panel** — Content thay đổi không thường xuyên; edit trực tiếp code đủ dùng
-- **Logo đối tác** (Binh đoàn 12, Trường Sơn, Bộ Quốc phòng) — Risk bản quyền; dùng text marquee thay vì image
-- **JetBrains Mono font** — Chỉ dùng ít chỗ; dùng `font-mono` system stack đủ
-- **Bebas Neue font** — Không có Vietnamese diacritics; thay bằng Be Vietnam Pro 800/900 uppercase
-- **GitHub Pages deploy** — ToS cấm "primarily commercial" sites
-- **Framer Motion / motion v12** — Quá nặng (~34-50KB) cho marketing site; dùng CSS-only + Motion One nếu thực sự cần
-- **next-sitemap package** — Next 15 built-in `app/sitemap.ts` + `app/robots.ts` đủ dùng
-- **ImageResponse cho OG dynamic** — Satori CSS subset hạn chế + Vietnamese diacritic fragile; dùng static `/public/og-image.png`
-- **Google Maps embed** — Phase 1 ưu tiên CTA liên hệ; map có thể thêm sau
-- **Trang About `/ve-chung-toi`** — Thông tin công ty đủ trong Hero + Footer + Capabilities; thêm trang riêng nếu cần sau
+v2.0 thêm: **Depth (chiều sâu nội dung)** + **Polish (cảm giác premium)** để giữ khách lâu hơn, scroll sâu hơn, tin tưởng nhiều hơn.
 
-## Context
+## Audience (giữ nguyên v1.0)
 
-**Tech environment:**
-- Đã có Next.js 15 skeleton (App Router) trong `/website/` với 4 trang (chủ/dịch vụ/dự án/liên hệ) — sẽ rebuild
-- Repo: https://github.com/phanchicong01/khangthinhdemo.git (đã init, có initial commit)
-- Build output: `/out/` (static files)
+1. Chủ đầu tư / nhà thầu lớn — verify uy tín, xem portfolio dự án Quốc phòng
+2. Chủ nhà cá nhân — tìm đơn vị xây nhà phố
+3. Doanh nghiệp mua VLXD số lượng lớn — verify năng lực cung ứng
+4. Bên thuê vận chuyển đường thủy — verify đội tàu, tuyến đường
 
-**Design assets có sẵn:**
-- 3 theme HTML demo (`../files (1)/khangthinh-mau-A|B|C-*.html`) — đã chọn Mẫu A (Industrial)
-- File PDF profile chính thức (`../Khang Thịnh Investment Profile 03-05-26.pdf`) — chứa logo, info, dự án
-- `../Illustration.png` — illustration công ty
+## Requirements (v2.0)
 
-**Design spec đã duyệt:**
-- `docs/superpowers/specs/2026-05-26-khangthinh-theme-migration-design.md`
-- Hybrid layout: Mẫu A industrial layout + palette Burgundy/Bone light mode
+### Active — New scope
 
-**Company facts (từ CLAUDE.md):**
-- MST: 1102 107 064, ĐDPL: Tô Thị Bích Ngọc
-- SĐT: 082 6553 599, Email: khangthinhinv2025@gmail.com
-- Địa chỉ: A3-02 KDC Long Phú, xã Bến Lức, tỉnh Tây Ninh
-- Phương châm: "Hợp tác cùng phát triển"
-- 4 dự án tiêu biểu: Cao tốc Cái Nước-Đất Mũi, Cầu Cửa Lớn, Đường ra Hòn Khoai, Nhà phố
+**Routes (mới):**
+
+- [ ] `/` — Landing premium (giữ + nâng cấp visual + animations)
+- [ ] `/ve-chung-toi` — Giới thiệu công ty (lịch sử, sứ mệnh, đội ngũ, sơ đồ tổ chức, giấy phép)
+- [ ] `/dich-vu` — Hub 3 dịch vụ + link tới detail
+- [ ] `/dich-vu/cung-ung-vlxd` — Cát/Đá/San lấp chi tiết + khu vực giao
+- [ ] `/dich-vu/xay-dung` — Nhà phố/dân dụng + quy trình thi công
+- [ ] `/dich-vu/van-chuyen-duong-thuy` — Đội tàu + tải trọng + tuyến đường ĐBSCL
+- [ ] `/nang-luc` — Năng lực sâu (đội tàu, cơ giới, đội xây lắp, an toàn, chứng chỉ)
+- [ ] `/du-an` — List dự án (giữ + nâng cấp filter/search)
+- [ ] `/du-an/[slug]` — Detail từng dự án (ảnh placeholder, khối lượng, thời gian, vai trò)
+- [ ] `/lien-he` — Trang liên hệ riêng (form báo giá + Google Maps + nhiều kênh)
+- [ ] `/tin-tuc` — Blog list (MDX)
+- [ ] `/tin-tuc/[slug]` — Blog post detail
+
+**System-level features:**
+
+- [ ] Navigation đa cấp (dropdown cho `/dich-vu/*`, `/du-an/*`)
+- [ ] Breadcrumbs cho mọi deep page
+- [ ] Form báo giá (Cloudflare Workers + Email Routing) — anti-spam honeypot + rate limit
+- [ ] MDX blog system với frontmatter + reading time + author + tags
+- [ ] Animations premium: page transitions, scroll reveal, parallax hero, count-up stats, hover micro-interactions (Motion v12)
+- [ ] i18n EN (English fallback cho khách quốc tế / nhà thầu nước ngoài)
+- [ ] Dark mode toggle (system preference + manual)
+- [ ] Search local (Pagefind static search index)
+- [ ] PWA manifest + service worker (offline-ready)
+- [ ] Web Vitals tracking (Vercel Analytics)
+- [ ] Newsletter signup ở footer (Cloudflare Workers + email list)
+- [ ] Animated SVG logo cho hero
+- [ ] FAQ schema markup (Schema.org FAQPage)
+- [ ] LocalBusiness schema mở rộng (areaServed, serviceCatalog đầy đủ)
+
+**Content depth (mỗi trang):**
+
+- [ ] Hero variants riêng cho mỗi page (không lặp Hero landing)
+- [ ] FAQ section trên mỗi service page (5–7 câu)
+- [ ] Quy trình 4–6 bước trên service pages
+- [ ] Cam kết chất lượng / Giấy phép trên `/ve-chung-toi` và `/nang-luc`
+- [ ] CTA contextual cho mỗi page (không chỉ "Gọi/Zalo" generic)
+- [ ] Related projects ở cuối mỗi service page
+- [ ] Tagline "Hợp tác cùng phát triển" xuất hiện ít nhất 1 chỗ visible
+
+**Visual polish:**
+
+- [ ] Premium hero treatment: full-bleed, gradient mesh, parallax background
+- [ ] Asymmetric grids thay cho 2/3-col đều đều
+- [ ] Large typography display cho headlines
+- [ ] SVG decorations / blueprint patterns lặp lại trên mọi page
+- [ ] Hover lifts, magnetic buttons, smooth scrolling
+- [ ] Image placeholder system tốt hơn block màu đặc (gradient + texture + icon stack)
+- [ ] Loading skeletons cho client components
+- [ ] 404 + 500 pages thiết kế riêng
+
+**Quality gates:**
+
+- [ ] Lighthouse mọi route: Performance ≥ 85 (chấp nhận thấp hơn v1.0 vì Motion v12), SEO ≥ 95, A11y ≥ 95, Best Practices ≥ 95
+- [ ] TypeScript strict, build pass
+- [ ] All routes có metadata + OG image riêng
+- [ ] Sitemap.xml include 12+ routes
+- [ ] Form submission test end-to-end (Cloudflare Worker)
+- [ ] Real device test trên iPhone Safari + Android Chrome
+
+### Validated (carry over from v1.0)
+
+- Stack Next.js 15 + React 19 + Tailwind 4 + TS 5.9 (locked)
+- Burgundy/Bone palette
+- Be Vietnam Pro font
+- Static export model
+- Single source of truth `lib/site.ts`
+- Vercel deployment
+- 2 phones (082 6553 599 primary + 0333 77 8888 secondary)
+
+### Out of Scope (v2.0)
+
+- **CMS / admin panel** — Content edit trực tiếp code; v3.0 nếu cần
+- **E-commerce / payment** — Không bán hàng online
+- **Login / user accounts** — Website thông tin, không tương tác cá nhân
+- **Real-time chat** (Tawk.to / Crisp) — Zalo widget native đã đủ
+- **Video CMS** — Embed YouTube nếu cần video, không host video
+- **Booking system** — Form báo giá đủ cho stage này
+- **Multi-tenant / sub-brand** — 1 công ty, 1 brand
+
+## Context (Tech Stack Evolution v1.0 → v2.0)
+
+### From v1.0 (unchanged)
+
+- Next.js 15 App Router
+- React 19
+- Tailwind CSS 4 với @theme directive
+- TypeScript 5.9 strict
+- Be Vietnam Pro (variable font)
+- Lucide React icons
+- Static export `output: 'export'`
+- Burgundy/Bone palette
+
+### New for v2.0
+
+| Library | Purpose | Why |
+|---------|---------|-----|
+| **`motion` v12** | Premium animations | Đã loại trong v1.0 vì "marketing site overkill" — v2.0 cần. ~50KB chấp nhận được cho corporate site |
+| **`@vercel/analytics`** | Web Vitals + page tracking | Đã defer từ v1.0 |
+| **Cloudflare Workers** | Form backend | Free, no brand, full control. Email Routing cho inbox notification |
+| **`@next/mdx`** + `gray-matter` + `reading-time` | Blog system | MDX cho `/tin-tuc/*` |
+| **`next-intl` v3** | i18n VI/EN | Type-safe, App Router native |
+| **`next-themes`** | Dark mode | Standard library, SSR-safe |
+| **`pagefind`** | Static search | Build-time index, ~30KB runtime, không cần backend |
+| **`@formkit/auto-animate`** *(maybe)* | Tiny list animations | Drop-in `useAutoAnimate()` hook |
+
+### Architecture Changes
+
+- Add `src/app/[locale]/` segment cho i18n
+- Add `src/content/blog/` cho MDX posts
+- Add `src/lib/services.ts`, `src/lib/capabilities.ts`, `src/lib/team.ts`, `src/lib/faqs.ts` — single source of truth pattern mở rộng
+- Add `src/components/nav/` (Navbar with dropdown, MobileMenu, MegaMenu)
+- Add `src/components/animations/` (Reveal, Parallax, CountUp, MagneticButton)
+- Add `src/components/forms/QuoteForm.tsx` + Worker endpoint
+- Add `src/messages/vi.json`, `src/messages/en.json` cho i18n
+
+## Domain & Deployment
+
+- **Current:** `https://khangthinhdemo-git-main-phanchicong01s-projects.vercel.app/` (Vercel default)
+- **Future:** Custom domain TBD — placeholder `https://khangthinhinv.vn` trong `NEXT_PUBLIC_SITE_URL`
+- **Auto-deploy:** mọi push `origin/main` → Vercel build
 
 ## Constraints
 
-- **Tech stack**: Next.js 15 (App Router) + React 19 + Tailwind CSS 4 + TypeScript 5.9 — đã set up sẵn, không đổi
-- **Deployment model**: Static export (`output: 'export'`) — không có backend, không server actions
-- **Timeline**: Không gấp, ưu tiên chất lượng
-- **Content**: Logo công ty extract từ PDF/Illustration.png; ảnh dự án chưa có (dùng placeholder/CSS pattern)
-- **Domain**: Chưa chốt — dùng placeholder `khangthinhinv.vn` trong metadata; deploy target chọn sau
-- **Legal**: Không dùng logo đối tác (Binh đoàn 12, Trường Sơn) — chỉ dùng tên text
+- **Content thật:** Chưa có ảnh thật + giấy phép scan. v2.0 sẽ dùng **placeholder content plausible** (em tự viết dựa trên facts có sẵn) — anh edit sau khi xem live. Code structure design sao cho swap content dễ.
+- **Budget:** Không hạn chế — ưu tiên chất lượng tối đa
+- **Timeline:** Không gấp
+- **Logo đối tác:** Vẫn không dùng image logo Binh đoàn 12 (risk bản quyền) — text-based vẫn áp dụng
 
-## Key Decisions
+## Key Decisions Locked (v2.0)
 
-| Decision | Rationale | Outcome |
-|----------|-----------|---------|
-| Rebuild từ đầu theo Mẫu A (không port code Next.js cũ) | Code cũ chỉ là skeleton tạm, không theo theme đã chọn | — Pending |
-| Palette Burgundy + Bone (light mode) | User chọn tone đỏ nâu sang trọng, light mode chuyên nghiệp doanh nghiệp | — Pending |
-| Hybrid routing (single-page + /du-an list) | Single-page phù hợp landing, /du-an mở rộng được sau | — Pending |
-| Bỏ Pricing section, thay bằng CTA báo giá | Giá VLXD biến động, show giá cố định gây risk | — Pending |
-| Bỏ contact form, dùng CTA call/zalo/mailto | B2B ngành xây dựng chuộng liên hệ trực tiếp | — Pending |
-| Partners marquee dùng text không dùng logo image | Tránh risk bản quyền logo Binh đoàn 12 / Trường Sơn | — Pending |
-| Hoãn /du-an/[slug] detail page | Chưa có content chi tiết đủ để fill | — Pending |
-| 1 font family (Be Vietnam Pro 400-900), bỏ Bebas Neue | Bebas Neue không có Vietnamese diacritics → break Hero/headings; dùng Be Vietnam Pro weight 800/900 + uppercase + letter-spacing để có industrial display feel | — Pending |
-| Deploy lên Cloudflare Pages | Free, unlimited bandwidth, commercial-OK, VN edge POPs, cookieless analytics; GitHub Pages cấm commercial use | — Pending |
-| Font load qua `next/font/google` với subset Vietnamese explicit | Built-in Next.js, tự động optimize, tránh CLS | — Pending |
-| Site URL qua env var `NEXT_PUBLIC_SITE_URL` | Tránh hardcode domain — đổi 1 chỗ khi có domain thật | — Pending |
-| Animation: CSS-only default, Motion One (4KB) nếu cần count-up | Tránh bloat bundle (Framer Motion ~34-50KB cho marketing site là overkill) | — Pending |
-| Icons: lucide-react | Tree-shakable, broad set, industrial line aesthetic | — Pending |
-| Analytics: Cloudflare Web Analytics | Free, cookieless, không cần consent banner (VN PDPL friendly) | — Pending |
+1. **Multi-page architecture** (12+ routes) thay vì single-page
+2. **Motion v12** cho animations (revoked v1.0 "no-Motion" decision)
+3. **Cloudflare Workers** cho form backend (revoked v1.0 "no form" decision)
+4. **i18n EN fallback** (revoked v1.0 "VI only" decision)
+5. **Dark mode toggle** (mới, không có ở v1.0)
+6. **MDX blog** (revoked v1.0 "no blog" decision)
+7. **Custom domain** vẫn pending — dùng placeholder `khangthinhinv.vn`
+8. **Vercel** locked (đã deploy, không đổi sang Cloudflare Pages nữa)
+9. **Vercel Analytics** thay Cloudflare Web Analytics (cùng platform)
+10. **Content giả định** em viết, anh edit sau
 
-## Evolution
+## Workflow Notes (carry over)
 
-This document evolves at phase transitions and milestone boundaries.
-
-**After each phase transition** (via `/gsd:transition`):
-1. Requirements invalidated? → Move to Out of Scope with reason
-2. Requirements validated? → Move to Validated with phase reference
-3. New requirements emerged? → Add to Active
-4. Decisions to log? → Add to Key Decisions
-5. "What This Is" still accurate? → Update if drifted
-
-**After each milestone** (via `/gsd:complete-milestone`):
-1. Full review of all sections
-2. Core Value check — still the right priority?
-3. Audit Out of Scope — reasons still valid?
-4. Update Context with current state
-
----
-*Last updated: 2026-05-26 after initialization*
+- All user-facing responses in Vietnamese
+- Code + comments in English
+- Auto-push after every phase completes
+- `auto_advance: true` trong config
+- `commit_docs: true`
+- Historical phase docs là point-in-time, không mass-update
