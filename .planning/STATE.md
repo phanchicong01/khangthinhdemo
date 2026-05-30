@@ -2,17 +2,20 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: full-corporate-website
-status: Phase 08 architecture COMPLETE — SSR + dark mode + multi-level nav + anim primitives. Phase 09 next (landing premium).
-stopped_at: 08-SUMMARY.md written; build pass; Navbar/MobileMenu/Breadcrumbs/ThemeProvider/anim primitives in place
+status: Phase 09 IN PROGRESS — real assets+content extracted, Hero v2 done. Remaining landing sections + Phases 10-18.
+stopped_at: "Hero.tsx rewritten (real photo bg + animation). company-profile.ts has REAL content. Logo + 5 project photos in public/. Next: rewrite Services/Projects/BigStats/Capabilities/CtaQuote/Contact + add Process/Commitment sections using company-profile.ts."
 last_updated: "2026-05-30T00:00:00.000Z"
 live_url: "https://khangthinhdemo-git-main-phanchicong01s-projects.vercel.app/"
 v1_archived: true
 render_mode: vercel-ssr
+resume_hint: "Read src/lib/company-profile.ts (REAL content) + src/lib/site.ts + .planning/phases/09-landing-premium/profile-raw.txt. Then continue Phase 09: rewrite remaining sections with real content + Reveal/CountUp animations + dark tokens (var(--color-*)). Then Phases 10-18 per ROADMAP. Auto-push each phase."
 progress:
   total_phases: 12
   completed_phases: 2
   total_plans: 0
   completed_plans: 0
+current_phase: 09
+current_phase_name: landing-premium
 next_phase: 09
 next_phase_name: landing-premium
 ---
