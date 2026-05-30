@@ -4,14 +4,7 @@
 import Link from 'next/link'
 import { Phone, Mail, MessageCircle, MapPin } from 'lucide-react'
 import { company, telHref, telSecondaryHref, mailtoHref, zaloHref } from '@/lib/site'
-
-const navAnchors = [
-  { href: '#dich-vu',  label: 'Dịch vụ' },
-  { href: '#du-an',    label: 'Dự án' },
-  { href: '#nang-luc', label: 'Năng lực' },
-  { href: '#doi-tac',  label: 'Đối tác' },
-  { href: '#lien-he',  label: 'Liên hệ' },
-] as const
+import { navItems } from '@/lib/nav'
 
 export default function Footer() {
   return (
@@ -45,28 +38,20 @@ export default function Footer() {
           </dl>
         </div>
 
-        {/* Col 2: Quick links — per D-10 */}
+        {/* Col 2: Quick links — site routes (v2.0 multi-page) */}
         <nav aria-label="Liên kết nhanh" className="space-y-3">
           <p className="font-bold uppercase tracking-wide text-sm text-taupe">Liên kết</p>
           <ul className="space-y-2 text-sm">
-            {navAnchors.map((a) => (
-              <li key={a.href}>
-                <a
-                  href={a.href}
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
                   className="inline-flex items-center min-w-[44px] min-h-[44px] py-2 hover:text-terracotta"
                 >
-                  {a.label}
-                </a>
+                  {item.label}
+                </Link>
               </li>
             ))}
-            <li>
-              <Link
-                href="/du-an"
-                className="inline-block min-h-[44px] py-2 hover:text-terracotta"
-              >
-                Tất cả dự án
-              </Link>
-            </li>
           </ul>
         </nav>
 

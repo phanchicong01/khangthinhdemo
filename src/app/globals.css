@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+/* Dark mode — next-themes adds `.dark` on <html> (attribute="class").
+   Tailwind v4 needs an explicit custom variant for class-based dark mode. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ------------------------------------------------------------------ */
 /* Design tokens — Tailwind v4 @theme block.                          */
 /* --color-* generates bg-*, text-*, border-*, ring-*, fill-* utilities. */
@@ -11,12 +15,24 @@
   /* Palette: Burgundy + Bone (light mode) */
   --color-burgundy: #6B1F1F;
   --color-burgundy-dark: #4A1414;
+  --color-burgundy-light: #8B3A3A;
   --color-terracotta: #B85450;
   --color-coffee: #3A1F1A;
   --color-bone: #F5F1EA;
   --color-bone-dark: #EBE4D6;
   --color-espresso: #1A1410;
   --color-taupe: #8B7355;
+
+  /* Dark-mode surface tokens (used by dark: utilities) */
+  --color-ink: #14100C;        /* darkest bg */
+  --color-ink-soft: #211A14;   /* card bg in dark */
+  --color-ink-border: #3A2E24; /* border in dark */
+  --color-cream: #F5F1EA;      /* text in dark */
+  --color-cream-muted: #B8A88F;/* muted text in dark */
+
+  /* Animation easing tokens */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
 }
 
 /* @theme inline is REQUIRED when a token references another CSS var.
@@ -26,8 +42,8 @@
   --font-sans: var(--font-be-vietnam-pro);
 }
 
-/* Semantic aliases (NOT in @theme — these don't need utility classes;
-   they're consumed only via var() in base styles, future dark-mode swap. */
+/* Semantic aliases — consumed via var() in base styles + dark-mode swap.
+   Light mode defaults: */
 :root {
   --color-bg: var(--color-bone);
   --color-bg-alt: var(--color-bone-dark);
@@ -36,6 +52,21 @@
   --color-primary: var(--color-burgundy);
   --color-primary-hover: var(--color-burgundy-dark);
   --color-accent: var(--color-terracotta);
+  --color-surface: #ffffff;
+  --color-border: var(--color-bone-dark);
+}
+
+/* Dark mode swap — next-themes toggles `.dark` on <html>. */
+.dark {
+  --color-bg: var(--color-ink);
+  --color-bg-alt: var(--color-ink-soft);
+  --color-fg: var(--color-cream);
+  --color-fg-muted: var(--color-cream-muted);
+  --color-primary: var(--color-terracotta);
+  --color-primary-hover: var(--color-burgundy-light);
+  --color-accent: var(--color-terracotta);
+  --color-surface: var(--color-ink-soft);
+  --color-border: var(--color-ink-border);
 }
 
 /* Base styles */
@@ -46,9 +77,16 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   line-height: 1.6;
+  transition: background-color 0.3s var(--ease-out-expo), color 0.3s var(--ease-out-expo);
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  body { transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Sticky-nav anchor offset (PITFALLS + D-20).

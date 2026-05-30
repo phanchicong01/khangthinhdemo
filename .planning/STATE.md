@@ -2,19 +2,19 @@
 gsd_state_version: 1.0
 milestone: v2.0
 milestone_name: full-corporate-website
-status: Phase 07 research COMPLETE — stack locked, render mode → Vercel SSR. Phase 08 next (architecture).
-stopped_at: RESEARCH.md written; render-mode decision approved (static export → SSR)
+status: Phase 08 architecture COMPLETE — SSR + dark mode + multi-level nav + anim primitives. Phase 09 next (landing premium).
+stopped_at: 08-SUMMARY.md written; build pass; Navbar/MobileMenu/Breadcrumbs/ThemeProvider/anim primitives in place
 last_updated: "2026-05-30T00:00:00.000Z"
 live_url: "https://khangthinhdemo-git-main-phanchicong01s-projects.vercel.app/"
 v1_archived: true
 render_mode: vercel-ssr
 progress:
   total_phases: 12
-  completed_phases: 1
+  completed_phases: 2
   total_plans: 0
   completed_plans: 0
-next_phase: 08
-next_phase_name: architecture-refactor
+next_phase: 09
+next_phase_name: landing-premium
 ---
 
 # Project State

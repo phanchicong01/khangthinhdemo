@@ -4,9 +4,10 @@
 import type { Metadata, Viewport } from 'next'
 import { Be_Vietnam_Pro } from 'next/font/google'
 import { siteUrl } from '@/lib/site'
-import Nav from '@/components/layout/Nav'
+import Navbar from '@/components/nav/Navbar'
 import Footer from '@/components/layout/Footer'
 import FloatingZalo from '@/components/layout/FloatingZalo'
+import { ThemeProvider } from '@/components/theme/ThemeProvider'
 import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
@@ -37,13 +38,17 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="vi" className={beVietnamPro.variable}>
+    // suppressHydrationWarning: next-themes sets the `class` on <html> before
+    // hydration, which would otherwise trigger a mismatch warning.
+    <html lang="vi" className={beVietnamPro.variable} suppressHydrationWarning>
       <body className="font-sans antialiased">
-        <Nav />
-        {children}
-        <Footer />
-        <FloatingZalo />
-        <Analytics />
+        <ThemeProvider>
+          <Navbar />
+          {children}
+          <Footer />
+          <FloatingZalo />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   )
